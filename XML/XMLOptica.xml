@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Articulos>
+	<Productos IdProducto="Gafas graduadas">
+		<Marca Nombre="Ray-Ban"/>
+			<Articulo Referencia="RX6365" Descripcion="El modelo RX6365 de Ray-ban Vista está formado por una montura completa fabricada en Metal, con tacto tradicional, ligero y resistente. " Tipo="Graduadas" Precio="110€" FechaEntrada="12/01/2021" Strock="8"/>
+			<Articulo Referencia="RX5114" Descripcion="El modelo RX5114 de Ray-ban Vista está formado por una montura completa fabricada en Inyectado, con tacto tradicional, ligero y resistente. " Tipo="Graduadas" Precio="100€" FechaEntrada="10/01/2021" Strock="15"/>
+			<Articulo Referencia="RX7046" Descripcion="El modelo RX7046 serie Erika de Ray-ban Vista está formado por una montura completa fabricada en Inyectado, con tacto tradicional, ligero y resistente. " Tipo="Graduadas" Precio="80€" FechaEntrada="10/01/2021" Strock="15"/>
+		<Marca Nombre="Porsche Design"/>
+		<Marca Nombre="Oakley"/>
+		<Marca Nombre="Police"/>		
+		
+	</Productos>
+	<Productos IdProducto="Gafas de sol">
+		<Marca Nombre="Hawkers"/>
+		<Marca Nombre="Carrera"/>
+		<Marca Nombre="Diesel"/>
+
+	</Productos>
+	<Productos IdProducto="Lentillas">
+		<Marca Nombre="Dailies"/>
+		<Marca Nombre="BioInfinity"/>
+		<Marca Nombre="Acuvue"/>
+
+	</Productos>
+	<Productos IdProducto="Audifonos">
+		<Marca Nombre="Starkey"/>
+		<Marca Nombre="Resound"/>
+		<Marca Nombre="Phonak"/>
+			
+	</Productos>
+	<Productos IdProducto="Monturas Gafas">
+		<Marca Nombre="Dolce Gabanna"/>
+		<Marca Nombre="Gucci"/>
+		<Marca Nombre="Fila"/>
+			
+	</Productos>
+	<Productos IdProducto="Liquido Lentillas">
+		<Marca Nombre="Solunate"/>
+		<Marca Nombre="Solocare"/>
+		<Marca Nombre="Biotrue"/>
+
+	</Productos>
+	<Productos IdProducto="Gafas Deporte">
+		<Marca Nombre="Adidas"/>
+		<Marca Nombre="Arnette"/>
+		<Marca Nombre="Nike"/>
+
+	</Productos>
+</Articulos>
