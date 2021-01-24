@@ -2,9 +2,6 @@
 <Articulos>
 	<Productos IdProducto="Gafas graduadas">
 		<Marca Nombre="Ray-Ban"/>
-			<Articulo Referencia="RX6365" Descripcion="El modelo RX6365 de Ray-ban Vista está formado por una montura completa fabricada en Metal, con tacto tradicional, ligero y resistente. " Tipo="Graduadas" Precio="110€" FechaEntrada="12/01/2021" Strock="8"/>
-			<Articulo Referencia="RX5114" Descripcion="El modelo RX5114 de Ray-ban Vista está formado por una montura completa fabricada en Inyectado, con tacto tradicional, ligero y resistente. " Tipo="Graduadas" Precio="100€" FechaEntrada="10/01/2021" Strock="15"/>
-			<Articulo Referencia="RX7046" Descripcion="El modelo RX7046 serie Erika de Ray-ban Vista está formado por una montura completa fabricada en Inyectado, con tacto tradicional, ligero y resistente. " Tipo="Graduadas" Precio="80€" FechaEntrada="10/01/2021" Strock="15"/>
 		<Marca Nombre="Porsche Design"/>
 		<Marca Nombre="Oakley"/>
 		<Marca Nombre="Police"/>		

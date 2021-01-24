@@ -5,10 +5,79 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProyectoDI_OpticaMarco.Paginas"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="580" d:DesignWidth="750"
       Title="Nuevo_ModificarProducto">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <StackPanel.Background>
+            <ImageBrush ImageSource="gafas.jpg"/>
+        </StackPanel.Background>
+
+
+
+
+        <TextBlock Text="Nuevo Producto" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30" FontFamily="Source Code Pro Black" FontSize="24"/>
+        <Grid x:Name="productoGrid" Height="350" Width="300" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Referencia:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="Gold" Background="Black"/>
+            <TextBox x:Name="txt_referencia" Text ="{Binding Path=referencia}" Margin="10,5" Grid.Row="1" VerticalContentAlignment="Center"/>
+
+            <TextBlock Grid.Row="2" Text="Elije un producto:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="Gold" Background="Black"/>
+            <ComboBox x:Name="ComboCategory" Text ="{Binding Path=category}" Margin="10,5" Grid.Row="3" VerticalContentAlignment="Center"/>
+            <CheckBox Grid.Row="3" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtCategory" Text ="{Binding Path=category}"  Visibility="Hidden" Margin="10,5" Grid.Row="3" VerticalContentAlignment="Center"/>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Elije una marca:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Gold" FontSize="14" Background="Black"/>
+            <ComboBox x:Name="ComboMarca" Text ="{Binding Path=brand}" Margin="10,5" Grid.Row="5"  VerticalContentAlignment="Center"/>
+            <CheckBox Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBox x:Name="txtMarca" Text ="{Binding Path=brand}" Visibility="Hidden" Margin="10,5" Grid.Row="5" VerticalContentAlignment="Center"/>
+
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Elije un tipo:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Gold" FontSize="14" Background="#FF080909"/>
+            <ComboBox x:Name="ComboTipo" Text ="{Binding Path=tipo}" Margin="10,5" Grid.Row="7"  VerticalContentAlignment="Center">
+                <ComboBoxItem Content="Graduadas"/>
+                <ComboBoxItem Content="De Sol"/>
+                <ComboBoxItem Content="Deportiva"/>
+                <ComboBoxItem Content="Lentillas"/>
+                <ComboBoxItem Content="Lectura"/>
+                <ComboBoxItem Content="De cerca"/>
+                <ComboBoxItem Content="Audifonos"/>
+            </ComboBox>
+
+
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="Precio:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Gold" FontSize="14" Background="Black"/>
+            <TextBox x:Name="txtPrecio" Text ="{Binding precio}" Margin="10,5" Grid.Row="8" Grid.Column="1" VerticalContentAlignment="Center"/>
+
+            <TextBlock Grid.Row="9" Grid.Column="0" Text="Fecha Alta:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Gold" FontSize="14" Background="Black"/>
+            <DatePicker x:Name="txtFecha" SelectedDate="{Binding fechaAltaProducto}" Margin="10,5" Grid.Row="9" Grid.Column="1"/>
+
+            <TextBlock Grid.Row="10" Grid.Column="0" Text="Stock:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Gold" FontSize="14" Background="Black"/>
+            <TextBox x:Name="txtStock" Text ="{Binding stock}" Margin="10,5" Grid.Row="10" Grid.Column="1" VerticalContentAlignment="Center"/>
+
+            <TextBlock Grid.Row="11" Grid.Column="0" Text="Descripcion:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Gold" FontSize="14" Background="Black"/>
+            <TextBox x:Name="txtDescripcion" Text ="{Binding descripcion}" Margin="10,5" Grid.Row="11" Grid.Column="1" VerticalContentAlignment="Center"/>
+
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="56" Width="300" Margin="20">
+            <Button Width="120" Height="40" Content="Aceptar" Margin="10,0,40,0" Background="Green" Click="Button_Click"/>
+            <Button Width="120" Height="40" Content="Cancelar" Margin="0,0,0,0" Background="Red" Click="Button_Click_1"/>
+        </StackPanel>
+    </StackPanel>
 </Page>

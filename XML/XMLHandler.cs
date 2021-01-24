@@ -28,11 +28,11 @@ namespace ProyectoDI_OpticaMarco.XML
             CargarXML();
             AddCategoria();
             AddMarca();
-            CrearArticulo();
+            AddArticulo();
             GuardarXML();
         }
 
-        private static void CrearArticulo() {
+        private static void AddArticulo() {
 
             XElement xmlArticulo = new XElement("Articulo", new XAttribute("Referencia", producto.referencia),
                                     new XAttribute("Descripcion", producto.descripcion), new XAttribute("Tipo", producto.tipo),
@@ -47,14 +47,14 @@ namespace ProyectoDI_OpticaMarco.XML
             var listaProductos = xml.Root.Elements("Productos").Attributes("IdProducto");
             bool isNewCategory = true;
 
-            foreach (XAttribute productos in listaProductos) {
-                if (productos.Value.Equals(producto.referencia)) {
-                    xmlProductos = productos.Parent;
+            foreach (XAttribute categoria in listaProductos) {
+                if (categoria.Value.Equals(producto.category)) {
+                    xmlProductos = categoria.Parent;
                     isNewCategory = false;
                     break;
                 } else {
-                    xmlProductos = new XElement("Productos", new XAttribute("IdProducto", producto.tipo));
-                    xmlBrand = new XElement("Marca", new XAttribute("Nombre", producto.referencia));
+                    xmlProductos = new XElement("Productos", new XAttribute("IdProducto", producto.category));
+                    xmlBrand = new XElement("Marca", new XAttribute("Nombre", producto.brand));
                     isNewCategory = true;
                 }
             }
@@ -68,17 +68,17 @@ namespace ProyectoDI_OpticaMarco.XML
         private static void AddMarca() {
 
             bool isNewBrand = true;
-            foreach (XAttribute brand in xmlProductos.Elements().Attributes("Nombre"));{
+            foreach (XAttribute brand in xmlProductos.Elements().Attributes("Nombre")){
 
-                if (brand.Value.Equals(producto.referencia))
+                if (brand.Value.Equals(producto.brand))
                 {
-                    xmlBrand = xmlBrand.Parent;
+                    xmlBrand = brand.Parent;
                     isNewBrand = false;
                     break;
 
                 }
                 else {
-                    xmlBrand = new XElement("Marca", new XAttribute("Nombre", producto.referencia));
+                    xmlBrand = new XElement("Marca", new XAttribute("Nombre", producto.brand));
                     isNewBrand = true;
                 }
                 if (isNewBrand) {

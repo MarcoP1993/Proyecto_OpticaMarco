@@ -24,5 +24,25 @@ namespace ProyectoDI_OpticaMarco
         {
             InitializeComponent();
         }
+
+        private void btnModificar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnNuevo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnMostrar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnPricipal_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

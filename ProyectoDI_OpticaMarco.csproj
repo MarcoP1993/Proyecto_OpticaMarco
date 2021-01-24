@@ -120,12 +120,22 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Diccionarios\" />
+    <Folder Include="Imagenes\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="XML\XMLOptica.xml" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Imagenes\opticaprincipal.jpg" />
+    <Resource Include="Paginas\opticaprincipal.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="maingafas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Paginas\gafas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Paginas\datos.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

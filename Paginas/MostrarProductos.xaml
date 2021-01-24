@@ -5,10 +5,53 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ProyectoDI_OpticaMarco.Paginas"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="580" d:DesignWidth="750"
       Title="MostrarProductos">
 
-    <Grid>
+    <StackPanel>
         
-    </Grid>
+        <StackPanel.Background>
+            <ImageBrush ImageSource="datos.jpg"/>
+        </StackPanel.Background>
+        
+        <TextBlock Text="CONSULTA PRODUCTOS" Margin="30" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="16" FontWeight="Bold"/>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="Categoria" Margin="20,0" FontWeight="Bold"/>
+            <ComboBox x:Name="categoryCombo" Width="200" Margin="10,0,50,0" SelectionChanged="categoryCombo_SelectionChanged"/>
+            <TextBlock Text="Busqueda" FontWeight="Bold" Margin="10,0"/>
+            <TextBox x:Name="busquedaTextBox" Width="171" TextChanged="TextBox_TextChanged"/>
+            <Button Content="Actualizar" Width="80" Margin="20,0" Click="Button_Actualizar"/>
+        </StackPanel>
+        <DataGrid x:Name="myDataGrid" Margin="20,70" Height="300" ColumnWidth="*" IsReadOnly="True"
+                  CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Referencia" Binding="{Binding referecnia}"/>
+                <DataGridTextColumn Header="Categoria" Binding="{Binding category}"/>
+                <DataGridTextColumn Header="Marca" Binding="{Binding brand}"/>
+                <DataGridTextColumn Header="Tipo" Binding="{Binding tipo}"/>
+                <DataGridTextColumn Header="Descripcion" Binding="{Binding descripcion}"/>
+                <DataGridTextColumn Header="Precio" Binding="{Binding precio}"/>
+                <DataGridTextColumn Header="Fecha" Binding="{Binding fecha}"/>
+                <DataGridTextColumn Header="Stock" Binding="{Binding stock}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Editar" Background="GreenYellow" Click="Boton_Editar"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Borrar" Background="Red" Click="Boton_Borrar"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            
+        </DataGrid>
+        
+    </StackPanel>
+    
 </Page>

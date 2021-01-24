@@ -23,6 +23,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
         public PaginaPrincipal()
         {
             InitializeComponent();
+            
         }
     }
 }
