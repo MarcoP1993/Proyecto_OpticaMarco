@@ -28,6 +28,7 @@ namespace ProyectoDI_OpticaMarco.ClaseProductos
 
         public ProductosOptica()
         {
+            this.fecha = DateTime.Today;
         }
 
         public String ObtenerTodosLosValores() {

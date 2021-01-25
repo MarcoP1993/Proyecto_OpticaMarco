@@ -46,7 +46,9 @@ namespace ProyectoDI_OpticaMarco
 
         private void btnPricipal_Click(object sender, RoutedEventArgs e)
         {
+
             myFrameNav.NavigationService.Navigate(new PaginaPrincipal());
+           
         }
     }
 }

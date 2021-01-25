@@ -26,7 +26,7 @@
                   CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Referencia" Binding="{Binding referecnia}"/>
+                <DataGridTextColumn Header="Referencia" Binding="{Binding referencia}"/>
                 <DataGridTextColumn Header="Categoria" Binding="{Binding category}"/>
                 <DataGridTextColumn Header="Marca" Binding="{Binding brand}"/>
                 <DataGridTextColumn Header="Tipo" Binding="{Binding tipo}"/>

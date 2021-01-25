@@ -2,9 +2,14 @@
 <Articulos>
   <Productos IdProducto="Gafas graduadas">
     <Marca Nombre="Ray-Ban" />
-    <Marca Nombre="Porsche Design" />
+    <Marca Nombre="Porsche Design">
+      <Articulo Referencia="sds" Descripcion="fghg" Tipo="De Sol" Precio="30" FechaEntrada="2021-01-25T00:00:00+01:00" Stock="3" />
+    </Marca>
     <Marca Nombre="Oakley" />
     <Marca Nombre="Police" />
+    <Marca Nombre="wer">
+      <Articulo Referencia="sdfdsf" Descripcion="wertg" Tipo="Graduadas" Precio="10" FechaEntrada="2021-01-25T00:00:00+01:00" Stock="10" />
+    </Marca>
   </Productos>
   <Productos IdProducto="Gafas de sol">
     <Marca Nombre="Hawkers" />
@@ -35,10 +40,5 @@
     <Marca Nombre="Adidas" />
     <Marca Nombre="Arnette" />
     <Marca Nombre="Nike" />
-    <Marca Nombre="">
-      <Articulo Referencia="1234" Descripcion="qweqwe" Tipo="Deportiva" Precio="12" FechaEntrada="2021-01-04T00:00:00" Stock="2" />
-    </Marca>
-    <Marca Nombre="" />
-    <Marca Nombre="" />
   </Productos>
 </Articulos>

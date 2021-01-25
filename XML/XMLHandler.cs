@@ -140,10 +140,12 @@ namespace ProyectoDI_OpticaMarco.XML
                     xmlBrand = new XElement("Marca", new XAttribute("Nombre", producto.brand));
                     isNewBrand = true;
                 }
-                if (isNewBrand) {
+           
+            }
+            if (isNewBrand)
+            {
 
-                    xmlProductos.Add(xmlBrand);
-                }
+                xmlProductos.Add(xmlBrand);
             }
         }
     }

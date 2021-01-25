@@ -46,7 +46,7 @@
             <TextBox x:Name="txtCategory" Text ="{Binding Path=category}"  Visibility="Hidden" Margin="10,5" Grid.Row="3" VerticalContentAlignment="Center"/>
 
             <TextBlock Grid.Row="4" Grid.Column="0" Text="Elije una marca:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Gold" FontSize="14" Background="Black"/>
-            <ComboBox x:Name="ComboMarca" Text ="{Binding Path=brand}" Margin="10,5" Grid.Row="5"  VerticalContentAlignment="Center" SelectionChanged="ComboMarca_SelectionChanged"/>
+            <ComboBox x:Name="ComboMarca" Text ="{Binding Path=brand}" Margin="10,5" Grid.Row="5"  VerticalContentAlignment="Center" />
             <CheckBox x:Name="brandCheck" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Click="brandCheck_Checked"/>
             <TextBox x:Name="txtMarca" Text ="{Binding Path=brand}" Visibility="Hidden" Margin="10,5" Grid.Row="5" VerticalContentAlignment="Center"/>
 
