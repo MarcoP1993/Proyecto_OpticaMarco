@@ -2,7 +2,7 @@
 
 namespace ProyectoDI_OpticaMarco.ClaseProductos
 {
-    class ProductosOptica : ICloneable
+    public class ProductosOptica : ICloneable
     {
 
         public String category { get; set; }
@@ -28,6 +28,11 @@ namespace ProyectoDI_OpticaMarco.ClaseProductos
 
         public ProductosOptica()
         {
+        }
+
+        public String ObtenerTodosLosValores() {
+
+            return brand + " " + descripcion + " " + referencia + " " + tipo;
         }
 
         public override string ToString()

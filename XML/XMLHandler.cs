@@ -1,6 +1,7 @@
 ﻿using ProyectoDI_OpticaMarco.ClaseProductos;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,30 @@ namespace ProyectoDI_OpticaMarco.XML
             xml = XDocument.Load("../../XML/XMLOptica.xml"); //Cargo el documento XMLOptica de la carpeta XML
         }
 
+        public static ObservableCollection<ProductosOptica> CargarProductos()
+        {
+            ObservableCollection<ProductosOptica> productList = new ObservableCollection<ProductosOptica>();
+
+            CargarXML();
+            var listaProductosXML = xml.Root.Elements("Productos").Elements("Marca").Elements("Articulo");
+
+            foreach (XElement productXML in listaProductosXML) {
+
+                producto = new ProductosOptica();
+                producto.referencia = productXML.Attribute("Referencia").Value;
+                producto.descripcion = productXML.Attribute("Descripcion").Value;
+                producto.tipo = productXML.Attribute("Tipo").Value;
+                producto.precio = float.Parse(productXML.Attribute("Precio").Value);
+                producto.fecha = DateTime.Parse (productXML.Attribute("FechaEntrada").Value);
+                producto.stock = int.Parse(productXML.Attribute("Stock").Value);
+                producto.brand = productXML.Parent.Attribute("Nombre").Value;
+                producto.category = productXML.Parent.Parent.Attribute("IdProducto").Value;
+                productList.Add(producto);
+            }
+
+            return productList;
+        }
+
         private static void GuardarXML() {
             xml.Save("../../XML/XMLOptica.xml");
         }
@@ -29,6 +54,40 @@ namespace ProyectoDI_OpticaMarco.XML
             AddCategoria();
             AddMarca();
             AddArticulo();
+            GuardarXML();
+        }
+
+        public static void ModificarProducto(ProductosOptica p)
+        {
+
+            CargarXML();
+            var listaReferenciaXML = xml.Root.Elements("Productos").Elements("Marca").Elements("Articulo").Attributes("Referencia");
+            foreach (XAttribute productoRef in listaReferenciaXML)
+            {
+
+                if (p.referencia == productoRef.Value)
+                {
+
+                    productoRef.Parent.Remove();
+                    break;
+                }
+            }
+            GuardarXML();
+            AñadirProductoXML(p);
+        }
+
+        public static void EliminarProducto(String referencia) {
+
+            CargarXML();
+            var listaReferenciaXML = xml.Root.Elements("Productos").Elements("Marca").Elements("Articulo").Attributes("Referencia");
+            foreach (XAttribute productoRef in listaReferenciaXML) {
+
+                if (referencia == productoRef.Value) {
+
+                    productoRef.Parent.Remove();
+                    break;
+                }
+            }
             GuardarXML();
         }
 

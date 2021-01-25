@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoDI_OpticaMarco.ClaseProductos;
+using ProyectoDI_OpticaMarco.Paginas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,29 +22,31 @@ namespace ProyectoDI_OpticaMarco
     /// </summary>
     public partial class MainWindow : Window
     {
+        public static Frame myFrameNav;
+        public ProductHandler productHandler = new ProductHandler();
+
         public MainWindow()
         {
             InitializeComponent();
+            myFrameNav = myFrameNavigation;
+            myFrameNavigation.NavigationService.Navigate(new PaginaPrincipal());
         }
 
-        private void btnModificar_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void btnNuevo_Click(object sender, RoutedEventArgs e)
         {
-
+            myFrameNavigation.NavigationService.Navigate(new Nuevo_ModificarProducto("Modificar Producto", productHandler));
         }
 
         private void btnMostrar_Click(object sender, RoutedEventArgs e)
         {
-
+            productHandler.ActualizarProductList();
+            myFrameNavigation.NavigationService.Navigate(new MostrarProductos(productHandler));
         }
 
         private void btnPricipal_Click(object sender, RoutedEventArgs e)
         {
-
+            myFrameNav.NavigationService.Navigate(new PaginaPrincipal());
         }
     }
 }

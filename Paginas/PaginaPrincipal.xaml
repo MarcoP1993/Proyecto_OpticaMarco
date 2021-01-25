@@ -8,7 +8,7 @@
       d:DesignHeight="580" d:DesignWidth="750"
       Title="PaginaPrincipal">
 
-    <Grid>
+    <Grid >
         <Grid.Background>
             <ImageBrush ImageSource="opticaprincipal.jpg"/>
         </Grid.Background>

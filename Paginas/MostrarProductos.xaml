@@ -19,7 +19,7 @@
             <TextBlock Text="Categoria" Margin="20,0" FontWeight="Bold"/>
             <ComboBox x:Name="categoryCombo" Width="200" Margin="10,0,50,0" SelectionChanged="categoryCombo_SelectionChanged"/>
             <TextBlock Text="Busqueda" FontWeight="Bold" Margin="10,0"/>
-            <TextBox x:Name="busquedaTextBox" Width="171" TextChanged="TextBox_TextChanged"/>
+            <TextBox x:Name="busquedaTextBox" Width="200" TextChanged="busquedaTextBox_TextChanged"/>
             <Button Content="Actualizar" Width="80" Margin="20,0" Click="Button_Actualizar"/>
         </StackPanel>
         <DataGrid x:Name="myDataGrid" Margin="20,70" Height="300" ColumnWidth="*" IsReadOnly="True"
@@ -34,14 +34,15 @@
                 <DataGridTextColumn Header="Precio" Binding="{Binding precio}"/>
                 <DataGridTextColumn Header="Fecha" Binding="{Binding fecha}"/>
                 <DataGridTextColumn Header="Stock" Binding="{Binding stock}"/>
-                <DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Editar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Content="Editar" Background="GreenYellow" Click="Boton_Editar"/>
+                            <Button Content="Editar" Background="GreenYellow" Click="Button_Editar"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
-                <DataGridTemplateColumn>
+                
+                <DataGridTemplateColumn Header="Borrar">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="Borrar" Background="Red" Click="Boton_Borrar"/>

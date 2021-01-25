@@ -1,46 +1,44 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Articulos>
-	<Productos IdProducto="Gafas graduadas">
-		<Marca Nombre="Ray-Ban"/>
-		<Marca Nombre="Porsche Design"/>
-		<Marca Nombre="Oakley"/>
-		<Marca Nombre="Police"/>		
-		
-	</Productos>
-	<Productos IdProducto="Gafas de sol">
-		<Marca Nombre="Hawkers"/>
-		<Marca Nombre="Carrera"/>
-		<Marca Nombre="Diesel"/>
-
-	</Productos>
-	<Productos IdProducto="Lentillas">
-		<Marca Nombre="Dailies"/>
-		<Marca Nombre="BioInfinity"/>
-		<Marca Nombre="Acuvue"/>
-
-	</Productos>
-	<Productos IdProducto="Audifonos">
-		<Marca Nombre="Starkey"/>
-		<Marca Nombre="Resound"/>
-		<Marca Nombre="Phonak"/>
-			
-	</Productos>
-	<Productos IdProducto="Monturas Gafas">
-		<Marca Nombre="Dolce Gabanna"/>
-		<Marca Nombre="Gucci"/>
-		<Marca Nombre="Fila"/>
-			
-	</Productos>
-	<Productos IdProducto="Liquido Lentillas">
-		<Marca Nombre="Solunate"/>
-		<Marca Nombre="Solocare"/>
-		<Marca Nombre="Biotrue"/>
-
-	</Productos>
-	<Productos IdProducto="Gafas Deporte">
-		<Marca Nombre="Adidas"/>
-		<Marca Nombre="Arnette"/>
-		<Marca Nombre="Nike"/>
-
-	</Productos>
+  <Productos IdProducto="Gafas graduadas">
+    <Marca Nombre="Ray-Ban" />
+    <Marca Nombre="Porsche Design" />
+    <Marca Nombre="Oakley" />
+    <Marca Nombre="Police" />
+  </Productos>
+  <Productos IdProducto="Gafas de sol">
+    <Marca Nombre="Hawkers" />
+    <Marca Nombre="Carrera" />
+    <Marca Nombre="Diesel" />
+  </Productos>
+  <Productos IdProducto="Lentillas">
+    <Marca Nombre="Dailies" />
+    <Marca Nombre="BioInfinity" />
+    <Marca Nombre="Acuvue" />
+  </Productos>
+  <Productos IdProducto="Audifonos">
+    <Marca Nombre="Starkey" />
+    <Marca Nombre="Resound" />
+    <Marca Nombre="Phonak" />
+  </Productos>
+  <Productos IdProducto="Monturas Gafas">
+    <Marca Nombre="Dolce Gabanna" />
+    <Marca Nombre="Gucci" />
+    <Marca Nombre="Fila" />
+  </Productos>
+  <Productos IdProducto="Liquido Lentillas">
+    <Marca Nombre="Solunate" />
+    <Marca Nombre="Solocare" />
+    <Marca Nombre="Biotrue" />
+  </Productos>
+  <Productos IdProducto="Gafas Deporte">
+    <Marca Nombre="Adidas" />
+    <Marca Nombre="Arnette" />
+    <Marca Nombre="Nike" />
+    <Marca Nombre="">
+      <Articulo Referencia="1234" Descripcion="qweqwe" Tipo="Deportiva" Precio="12" FechaEntrada="2021-01-04T00:00:00" Stock="2" />
+    </Marca>
+    <Marca Nombre="" />
+    <Marca Nombre="" />
+  </Productos>
 </Articulos>

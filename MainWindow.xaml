@@ -10,17 +10,15 @@
         <Grid.Background>
             <ImageBrush ImageSource="maingafas.jpg"/>
         </Grid.Background>
+        <TextBox Text="NovaLens  Vision" BorderBrush="White" FontSize="30" FontFamily="Reem Kufi" FontWeight="Bold" Margin="280,149,234.6,507.8" TextAlignment="Center" FontStyle="Italic"/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Height="100" Width="400" Margin="190,10,203.6,0">
-            <Button x:Name="btnNuevo" FontWeight="ExtraBold" Content="Nuevo" Width="80" Margin="10,30" Background="Aqua" Click="btnNuevo_Click"/>
-            <Button x:Name="btnModificar" Content="Modificar"  FontWeight="ExtraBold" Width="80" Margin="10,30" Background="LightSkyBlue" Click="btnModificar_Click"/>
-            <Button x:Name="btnMostrar" Content="Mostrar"  FontWeight="ExtraBold" Width="80" Margin="10,30" Background="DeepSkyBlue" Click="btnMostrar_Click"/>
-            <Button x:Name="btnPricipal" Content="Principal"  FontWeight="ExtraBold" Width="80" Margin="10,30" Background="DodgerBlue" Click="btnPricipal_Click"/>
+            <Button x:Name="btnNuevo" FontWeight="ExtraBold" Content="Nuevo" Width="100" Margin="10,30" Background="Aqua" Click="btnNuevo_Click"/>
+            <Button x:Name="btnMostrar" Content="Mostrar"  FontWeight="ExtraBold" Width="100" Margin="30,30" Background="DeepSkyBlue" Click="btnMostrar_Click"/>
+            <Button x:Name="btnPricipal" Content="Principal"  FontWeight="ExtraBold" Width="100" Margin="10,30" Background="DodgerBlue" Click="btnPricipal_Click"/>
         </StackPanel>
-        <Frame Height="580" Width="750" VerticalAlignment="Bottom" Margin="20"/>
-        <TextBox Text="NovaLens  Vision" BorderBrush="White" FontSize="30" FontFamily="Reem Kufi" FontWeight="Bold" Margin="280,149,234.6,507.8" TextAlignment="Center" FontStyle="Italic">
-            <TextBox.Background>
-                <ImageBrush/>
-            </TextBox.Background>
-        </TextBox>
+        
+        <Frame Name="myFrameNavigation" Height="600" Width="760" VerticalAlignment="Bottom" Margin="20" NavigationUIVisibility="Hidden"/>
+        
+       
     </Grid>
 </Window>
