@@ -5,15 +5,22 @@
     <Marca Nombre="Porsche Design">
       <Articulo Referencia="sds" Descripcion="fghg" Tipo="De Sol" Precio="30" FechaEntrada="2021-01-25T00:00:00+01:00" Stock="3" />
     </Marca>
-    <Marca Nombre="Oakley" />
-    <Marca Nombre="Police" />
-    <Marca Nombre="wer">
-      <Articulo Referencia="sdfdsf" Descripcion="wertg" Tipo="Graduadas" Precio="10" FechaEntrada="2021-01-25T00:00:00+01:00" Stock="10" />
+    <Marca Nombre="Oakley">
+      <Articulo Referencia="54321" Descripcion="gafas Oakley" Tipo="Graduadas" Precio="10" FechaEntrada="2021-01-25T00:00:00+01:00" Stock="10" />
     </Marca>
+    <Marca Nombre="Police">
+      <Articulo Referencia="sdfdsf" Descripcion="gafas police" Tipo="Deportiva" Precio="15" FechaEntrada="2021-01-25T00:00:00+01:00" Stock="10" />
+    </Marca>
+    <Marca Nombre="wer" />
   </Productos>
   <Productos IdProducto="Gafas de sol">
-    <Marca Nombre="Hawkers" />
-    <Marca Nombre="Carrera" />
+    <Marca Nombre="Hawkers">
+      <Articulo Referencia="5678" Descripcion="wertg" Tipo="De Sol" Precio="10" FechaEntrada="2021-01-25T00:00:00+01:00" Stock="10" />
+      <Articulo Referencia="hawk123" Descripcion="Hawkers 700" Tipo="De Sol" Precio="30" FechaEntrada="2021-02-06T00:00:00+01:00" Stock="25" />
+    </Marca>
+    <Marca Nombre="Carrera">
+      <Articulo Referencia="1245" Descripcion="hawkers" Tipo="De Sol" Precio="20" FechaEntrada="2021-02-03T00:00:00" Stock="4" />
+    </Marca>
     <Marca Nombre="Diesel" />
   </Productos>
   <Productos IdProducto="Lentillas">

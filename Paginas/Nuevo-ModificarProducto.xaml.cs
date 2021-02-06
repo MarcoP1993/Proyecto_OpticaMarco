@@ -1,4 +1,5 @@
 ﻿using ProyectoDI_OpticaMarco.ClaseProductos;
+using ProyectoDI_OpticaMarco.Imagenes;
 using ProyectoDI_OpticaMarco.XML;
 using System;
 using System.Collections.Generic;
@@ -79,8 +80,10 @@ namespace ProyectoDI_OpticaMarco.Paginas
                 }
                 else {
 
-                    productHandler.AddProducto(productos);
+                    //productHandler.AddProducto(productos);
                     XMLHandler.AñadirProductoXML(productos);
+                    ImageHandler.AddImage(productos.referencia, (BitmapImage)myImage.Source);
+                    
                 }
 
                 MainWindow.myFrameNav.NavigationService.Navigate(new PaginaPrincipal());
@@ -156,6 +159,13 @@ namespace ProyectoDI_OpticaMarco.Paginas
             }
         }
 
-        
+        private void btnAñadirImagen_Click(object sender, RoutedEventArgs e)
+        {
+            BitmapImage bitmapImage = ImageHandler.GetBitmapImageFromFile();
+            if (bitmapImage != null) {
+
+                myImage.Source = bitmapImage;
+            }
+        }
     }
 }

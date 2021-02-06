@@ -17,8 +17,9 @@
 
 
         <TextBlock x:Name="mytitle" Text="Nuevo Producto" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30" FontFamily="Source Code Pro Black" FontSize="24"/>
-        <Grid x:Name="productoGrid" Height="350" Width="300" >
+        <Grid x:Name="productoGrid" Height="350" Width="700" >
             <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
@@ -73,7 +74,11 @@
 
             <TextBlock Grid.Row="11" Grid.Column="0" Text="Descripcion:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Foreground="Gold" FontSize="14" Background="Black"/>
             <TextBox x:Name="txtDescripcion" Text ="{Binding descripcion}" Margin="10,5" Grid.Row="11" Grid.Column="1" VerticalContentAlignment="Center"/>
-
+            
+            <StackPanel Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.RowSpan="12">
+                <Image x:Name="myImage" Margin="10,0" Height="180" Width="180" Stretch="Uniform"/>
+                <Button x:Name="btnAñadirImagen" Content="Seleccionar Imagen" Click="btnAñadirImagen_Click"/>
+            </StackPanel>
         </Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="56" Width="300" Margin="20">
             <Button Width="120" Height="40" Content="Aceptar" Margin="10,0,40,0" Background="Green" Click="Button_Aceptar"/>

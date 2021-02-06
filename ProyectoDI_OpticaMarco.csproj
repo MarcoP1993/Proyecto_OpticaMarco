@@ -87,6 +87,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet_Local_Images.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProjectDB\SQLData\LocalImages\LocalImageDBHandler.cs" />
     <Compile Include="XML\XMLHandler.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

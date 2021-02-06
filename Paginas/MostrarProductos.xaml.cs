@@ -102,7 +102,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
         {
             ObservableCollection<ProductosOptica> filtrarLista = new ObservableCollection<ProductosOptica>();
 
-            foreach (ProductosOptica productos in filtrarLista) {
+            foreach (ProductosOptica productos in filtrarProductos) {
 
                 if (productos.ObtenerTodosLosValores().Contains(busquedaTextBox.Text)) {
 

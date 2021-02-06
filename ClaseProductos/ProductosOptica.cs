@@ -43,7 +43,7 @@ namespace ProyectoDI_OpticaMarco.ClaseProductos
 
         public object Clone()
         {
-            throw new NotImplementedException();
+            return MemberwiseClone();
         }
     }
 }
