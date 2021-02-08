@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Media.Imaging;
 
 namespace ProyectoDI_OpticaMarco.ClaseProductos
 {
@@ -13,6 +14,8 @@ namespace ProyectoDI_OpticaMarco.ClaseProductos
         public float precio { set; get; }
         public DateTime fecha { set; get; }
         public int stock { set; get; }
+
+        public BitmapImage imagen { set; get; }
 
         public ProductosOptica(string category, string brand, string referencia, string descripcion, string tipo, float precio, DateTime fecha, int stock)
         {

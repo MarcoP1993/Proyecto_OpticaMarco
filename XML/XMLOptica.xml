@@ -17,6 +17,7 @@
     <Marca Nombre="Hawkers">
       <Articulo Referencia="5678" Descripcion="wertg" Tipo="De Sol" Precio="10" FechaEntrada="2021-01-25T00:00:00+01:00" Stock="10" />
       <Articulo Referencia="hawk123" Descripcion="Hawkers 700" Tipo="De Sol" Precio="30" FechaEntrada="2021-02-06T00:00:00+01:00" Stock="25" />
+      <Articulo Referencia="nuevo" Descripcion="Hawkers Classic" Tipo="De Sol" Precio="20" FechaEntrada="2021-02-07T00:00:00+01:00" Stock="5" />
     </Marca>
     <Marca Nombre="Carrera">
       <Articulo Referencia="1245" Descripcion="hawkers" Tipo="De Sol" Precio="20" FechaEntrada="2021-02-03T00:00:00" Stock="4" />

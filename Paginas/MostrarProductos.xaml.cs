@@ -1,4 +1,5 @@
 ﻿using ProyectoDI_OpticaMarco.ClaseProductos;
+using ProyectoDI_OpticaMarco.ProjectDB.SQLData.LocalImages;
 using ProyectoDI_OpticaMarco.XML;
 using System;
 using System.Collections.Generic;
@@ -59,6 +60,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
         {
             ProductosOptica productos = (ProductosOptica)myDataGrid.SelectedItem;
             XMLHandler.EliminarProducto(productos.referencia);
+            LocalImageDBHandler.BorrarDataFromDB(productos.referencia);
             ActualizarProductList();
 
         }

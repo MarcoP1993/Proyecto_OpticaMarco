@@ -40,6 +40,28 @@ namespace ProyectoDI_OpticaMarco.Imagenes
             LocalImageDBHandler.AddData_toDB(referencia, EncodeImage(bitmapImage));
         }
 
+        public static BitmapImage CargarImagenPorDefecto() {
+
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.UriSource = new Uri("/Imagenes/no-disponible.png", UriKind.Relative);
+            bitmapImage.EndInit();
+            return bitmapImage;
+        }
+
+        public static BitmapImage LoadImage(string referencia) {
+
+            byte[] imageData = LocalImageDBHandler.GetDataFromDB(referencia);
+            BitmapImage bitmapImage = CargarImagenPorDefecto();
+
+            if (imageData != null) {
+
+                bitmapImage = DecodeImage(imageData);
+            }
+
+            return bitmapImage;
+        }
+
         //este metodo coge un objeto bitmapimage y lo transforma a byte 
         public static byte[] EncodeImage(BitmapImage bitmapImage)
         {
@@ -54,6 +76,30 @@ namespace ProyectoDI_OpticaMarco.Imagenes
                 imageByte = ms.ToArray();
             }
             return imageByte;
+        }
+
+        //este metodo coge un objeto byte y lo transforma a imagen
+        public static BitmapImage DecodeImage(byte[] imageData)
+        {
+            if (imageData == null || imageData.Length == 0) return null;
+            var image = new BitmapImage();
+            using (var mem = new MemoryStream(imageData))
+            {
+                mem.Position = 0;
+                image.BeginInit();
+                image.CreateOptions = BitmapCreateOptions.PreservePixelFormat;
+                image.CacheOption = BitmapCacheOption.OnLoad;
+                image.UriSource = null;
+                image.StreamSource = mem;
+                image.EndInit();
+            }
+            image.Freeze();
+            return image;
+        }
+
+        public static void ModificarImagen(string referencia, BitmapImage bitmapImage)
+        {
+            LocalImageDBHandler.ActualizarDataFromDB(referencia, EncodeImage(bitmapImage));
         }
     }
 }

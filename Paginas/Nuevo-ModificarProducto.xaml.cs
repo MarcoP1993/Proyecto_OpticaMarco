@@ -30,8 +30,9 @@ namespace ProyectoDI_OpticaMarco.Paginas
         public ProductHandler productHandler;
         public ProductosOptica productos;
         public bool modify;
+        public bool nuevaImagen = false;
        
-
+        //Constructor modificar
         public Nuevo_ModificarProducto(String title, ProductHandler productHandler, ProductosOptica productos) {
 
             InitializeComponent();
@@ -42,6 +43,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
             initCategoryCombo();
             ComboCategory.Text = productos.category;
             ComboMarca.Text = productos.brand;
+            myImage.Source = ImageHandler.LoadImage(productos.referencia);
             modify = true;
         }
 
@@ -55,6 +57,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
             }
         }
 
+        //Constructor nuevo producto
         public Nuevo_ModificarProducto(String title, ProductHandler productHandler)
         {
             InitializeComponent();
@@ -63,6 +66,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
             this.productos = new ProductosOptica();
             productoGrid.DataContext = productos;
             initCategoryCombo();
+            myImage.Source = ImageHandler.CargarImagenPorDefecto();
             modify = false;
 
 
@@ -76,13 +80,20 @@ namespace ProyectoDI_OpticaMarco.Paginas
                 {
                     //productHandler.ModificarProducto(productos, pos);
                     XMLHandler.ModificarProducto(productos);
+                    if (nuevaImagen) {
 
+                        ImageHandler.ModificarImagen(productos.referencia,(BitmapImage) myImage.Source);
+                    }
                 }
                 else {
 
                     //productHandler.AddProducto(productos);
                     XMLHandler.AñadirProductoXML(productos);
-                    ImageHandler.AddImage(productos.referencia, (BitmapImage)myImage.Source);
+                    if (nuevaImagen) {
+
+                        ImageHandler.AddImage(productos.referencia, (BitmapImage)myImage.Source);
+                    }
+                    
                     
                 }
 
@@ -165,6 +176,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
             if (bitmapImage != null) {
 
                 myImage.Source = bitmapImage;
+                nuevaImagen = true;
             }
         }
     }

@@ -170,6 +170,7 @@
     <Resource Include="Paginas\datos.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Imagenes\no-disponible.png" />
     <Content Include="ProjectDB\SQLData\LocalImages\LocalImagesDB\DB_Local_Images.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

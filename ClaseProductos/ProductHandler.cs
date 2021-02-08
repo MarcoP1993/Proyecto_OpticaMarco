@@ -1,4 +1,5 @@
-﻿using ProyectoDI_OpticaMarco.XML;
+﻿using ProyectoDI_OpticaMarco.Imagenes;
+using ProyectoDI_OpticaMarco.XML;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -20,6 +21,11 @@ namespace ProyectoDI_OpticaMarco.ClaseProductos
         public void ActualizarProductList()
         {
             this.productoList = XMLHandler.CargarProductos();
+
+            foreach (ProductosOptica productos in productoList) {
+
+                productos.imagen = ImageHandler.LoadImage(productos.referencia);
+            }
         }
 
         public void AddProducto(ProductosOptica productos) {

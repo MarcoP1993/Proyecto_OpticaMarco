@@ -778,11 +778,23 @@ namespace ProyectoDI_OpticaMarco.ProjectDB.SQLData.LocalImages.LocalImageDataSet
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdImage, productImage FROM dbo.Images";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT IdImage, productImage\r\nFROM     Images\r\nWHERE  (IdImage = @idImage)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idImage", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "IdImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "UPDATE Images\r\nSET          productImage = @productImage\r\nWHERE  (IdImage = @IdIm" +
+                "age); \r\nSELECT IdImage, productImage FROM Images WHERE (IdImage = @IdImage)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@productImage", global::System.Data.SqlDbType.Image, 2147483647, global::System.Data.ParameterDirection.Input, 0, 0, "productImage", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdImage", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "IdImage", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -804,6 +816,42 @@ namespace ProyectoDI_OpticaMarco.ProjectDB.SQLData.LocalImages.LocalImageDataSet
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DataSet_Local_Images.ImagesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DataSet_Local_Images.ImagesDataTable dataTable = new DataSet_Local_Images.ImagesDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DataSet_Local_Images.ImagesDataTable dataTable, string idImage) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((idImage == null)) {
+                throw new global::System.ArgumentNullException("idImage");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(idImage));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DataSet_Local_Images.ImagesDataTable GetImage(string idImage) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((idImage == null)) {
+                throw new global::System.ArgumentNullException("idImage");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(idImage));
+            }
             DataSet_Local_Images.ImagesDataTable dataTable = new DataSet_Local_Images.ImagesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -943,6 +991,41 @@ namespace ProyectoDI_OpticaMarco.ProjectDB.SQLData.LocalImages.LocalImageDataSet
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(byte[] productImage, string Original_IdImage) {
             return this.Update(Original_IdImage, productImage, Original_IdImage);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateData(byte[] productImage, string IdImage) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((productImage == null)) {
+                throw new global::System.ArgumentNullException("productImage");
+            }
+            else {
+                command.Parameters[0].Value = ((byte[])(productImage));
+            }
+            if ((IdImage == null)) {
+                throw new global::System.ArgumentNullException("IdImage");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(IdImage));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
