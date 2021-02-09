@@ -18,16 +18,17 @@ namespace ProyectoDI_OpticaMarco.ClaseProductos
         public bool publish { set; get; }
         public BitmapImage imagen { set; get; }
 
-        public ProductosOptica(string category, string brand, string referencia, string descripcion, string tipo, float precio, DateTime fecha, int stock)
+        public ProductosOptica(string referencia, string category, string brand, string descripcion, string tipo, float precio, DateTime fecha, int stock)
         {
+            this.referencia = referencia;
             this.category = category;
             this.brand = brand;
-            this.referencia = referencia;
             this.descripcion = descripcion;
             this.tipo = tipo;
             this.precio = precio;
             this.fecha = fecha;
             this.stock = stock;
+            this.publish = false;
         }
 
         public ProductosOptica()

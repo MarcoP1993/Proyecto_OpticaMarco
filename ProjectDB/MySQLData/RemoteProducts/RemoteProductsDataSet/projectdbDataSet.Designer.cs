@@ -1498,10 +1498,10 @@ namespace ProyectoDI_OpticaMarco.ProjectDB.MySQLData.RemoteProducts.RemoteProduc
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "DELETE FROM `publishmp` WHERE (`referencia` = @p1) ";
+            this._commandCollection[1].CommandText = "DELETE FROM `publishmp` WHERE (`referencia` = @referencia) ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@p1";
+            param.ParameterName = "@referencia";
             param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 45;
@@ -2101,13 +2101,13 @@ namespace ProyectoDI_OpticaMarco.ProjectDB.MySQLData.RemoteProducts.RemoteProduc
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteMySQL(string p1) {
+        public virtual int DeleteMySQL(string referencia) {
             global::MySql.Data.MySqlClient.MySqlCommand command = this.CommandCollection[1];
-            if ((p1 == null)) {
-                throw new global::System.ArgumentNullException("p1");
+            if ((referencia == null)) {
+                throw new global::System.ArgumentNullException("referencia");
             }
             else {
-                command.Parameters[0].Value = ((string)(p1));
+                command.Parameters[0].Value = ((string)(referencia));
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 

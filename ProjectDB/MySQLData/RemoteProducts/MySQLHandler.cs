@@ -19,13 +19,13 @@ namespace ProyectoDI_OpticaMarco.ProjectDB.MySQLData.RemoteProducts
             
 
 
-            imagesAdapter.Insert(productos.category, productos.brand, productos.referencia, productos.descripcion, productos.tipo, productos.precio, productos.stock, productos.fecha, productos.imagen);
+            imagesAdapter.Insert(productos.referencia, productos.category, productos.brand, productos.descripcion, productos.tipo, productos.precio, productos.stock, productos.fecha, productos.imagen);
             imagesAdapter.Update(dataset);
         }
 
-        public static void Delete_toMySQL(string referencia) {
+        public static void Delete_toMySQL(ProductosOptica productos) {
 
-            imagesAdapter.DeleteMySQL(referencia);
+            imagesAdapter.DeleteMySQL(productos.referencia);
             imagesAdapter.Update(dataset);
         }
 

@@ -127,7 +127,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
             ProductosOptica productos = (ProductosOptica)myDataGrid.SelectedItem;
             if (productos.publish == false)
             {
-                MySQLHandler.Delete_toMySQL(productos.referencia);
+                
                 MySQLHandler.AddData_toMySQL(productos);
                 productos.publish = true;
                 XMLHandler.ModificarProducto(productos);
@@ -135,11 +135,12 @@ namespace ProyectoDI_OpticaMarco.Paginas
 
             }
             else {
-                MySQLHandler.Delete_toMySQL(productos.referencia);
+                MySQLHandler.Delete_toMySQL(productos);
                 productos.publish = false;
                 XMLHandler.ModificarProducto(productos);
                 ActualizarProductList();
             }
+           
         }
 
        

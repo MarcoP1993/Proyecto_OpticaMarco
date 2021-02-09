@@ -1,33 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Articulos>
   <Productos IdProducto="Gafas graduadas">
-    <Marca Nombre="Ray-Ban">
-      <Articulo Referencia="aaaa" Descripcion="carrera" Tipo="Graduadas" Precio="212" FechaEntrada="2021-02-09T00:00:00+01:00" Stock="2" Publish="false" />
-    </Marca>
+    <Marca Nombre="Ray-Ban"></Marca>
     <Marca Nombre="Porsche Design" />
     <Marca Nombre="Oakley" />
-    <Marca Nombre="Police">
-      <Articulo Referencia="sdfdsf" Descripcion="gafas police" Tipo="Deportiva" Precio="15" FechaEntrada="2021-01-25T00:00:00+01:00" Stock="10" Publish="false" />
-      <Articulo Referencia="1234tres" Descripcion="gafas police" Tipo="Graduadas" Precio="80" FechaEntrada="2021-02-09T00:00:00+01:00" Stock="5" Publish="false" />
-    </Marca>
+    <Marca Nombre="Police"></Marca>
     <Marca Nombre="wer" />
   </Productos>
   <Productos IdProducto="Gafas de sol">
     <Marca Nombre="Hawkers">
-      <Articulo Referencia="5678" Descripcion="wertg" Tipo="De Sol" Precio="10" FechaEntrada="2021-01-25T00:00:00+01:00" Stock="10" Publish="false" />
-      <Articulo Referencia="hawk123" Descripcion="Hawkers 700" Tipo="De Sol" Precio="30" FechaEntrada="2021-02-06T00:00:00+01:00" Stock="25" Publish="false" />
-      <Articulo Referencia="nuevo" Descripcion="Hawkers Classic" Tipo="De Sol" Precio="20" FechaEntrada="2021-02-07T00:00:00+01:00" Stock="5" Publish="false" />
-      <Articulo Referencia="sds" Descripcion="fghg" Tipo="De Sol" Precio="30" FechaEntrada="2021-01-25T00:00:00+01:00" Stock="3" Publish="false" />
+      <Articulo Referencia="1234" Descripcion="aaa" Tipo="De Sol" Precio="10" FechaEntrada="2021-02-09T00:00:00+01:00" Stock="5" Publish="false" />
     </Marca>
-    <Marca Nombre="Carrera">
-      <Articulo Referencia="1245" Descripcion="hawkers" Tipo="De Sol" Precio="20" FechaEntrada="2021-02-03T00:00:00" Stock="4" Publish="false" />
-    </Marca>
+    <Marca Nombre="Carrera" />
     <Marca Nombre="Diesel" />
   </Productos>
   <Productos IdProducto="Lentillas">
-    <Marca Nombre="Dailies">
-      <Articulo Referencia="zxcv" Descripcion="lentillas" Tipo="Lentillas" Precio="25" FechaEntrada="2021-02-09T00:00:00+01:00" Stock="10" Publish="false" />
-    </Marca>
+    <Marca Nombre="Dailies" />
     <Marca Nombre="BioInfinity" />
     <Marca Nombre="Acuvue" />
   </Productos>
