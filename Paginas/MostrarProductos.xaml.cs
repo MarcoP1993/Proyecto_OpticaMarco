@@ -1,4 +1,5 @@
 ﻿using ProyectoDI_OpticaMarco.ClaseProductos;
+using ProyectoDI_OpticaMarco.ProjectDB.MySQLData.RemoteProducts;
 using ProyectoDI_OpticaMarco.ProjectDB.SQLData.LocalImages;
 using ProyectoDI_OpticaMarco.XML;
 using System;
@@ -120,5 +121,27 @@ namespace ProyectoDI_OpticaMarco.Paginas
         {
             ActualizarProductList();
         }
+
+        private void Button_Publicar(object sender, RoutedEventArgs e)
+        {
+            ProductosOptica productos = (ProductosOptica)myDataGrid.SelectedItem;
+            if (productos.publish == false)
+            {
+                MySQLHandler.Delete_toMySQL(productos.referencia);
+                MySQLHandler.AddData_toMySQL(productos);
+                productos.publish = true;
+                XMLHandler.ModificarProducto(productos);
+                ActualizarProductList();
+
+            }
+            else {
+                MySQLHandler.Delete_toMySQL(productos.referencia);
+                productos.publish = false;
+                XMLHandler.ModificarProducto(productos);
+                ActualizarProductList();
+            }
+        }
+
+       
     }
 }

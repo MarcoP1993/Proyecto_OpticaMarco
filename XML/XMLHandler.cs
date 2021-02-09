@@ -37,6 +37,7 @@ namespace ProyectoDI_OpticaMarco.XML
                 producto.stock = int.Parse(productXML.Attribute("Stock").Value);
                 producto.brand = productXML.Parent.Attribute("Nombre").Value;
                 producto.category = productXML.Parent.Parent.Attribute("IdProducto").Value;
+                producto.publish = bool.Parse(productXML.Attribute("Publish").Value);
                 productList.Add(producto);
             }
 
@@ -96,7 +97,7 @@ namespace ProyectoDI_OpticaMarco.XML
             XElement xmlArticulo = new XElement("Articulo", new XAttribute("Referencia", producto.referencia),
                                     new XAttribute("Descripcion", producto.descripcion), new XAttribute("Tipo", producto.tipo),
                                     new XAttribute("Precio", producto.precio), new XAttribute("FechaEntrada", producto.fecha),
-                                    new XAttribute("Stock", producto.stock));
+                                    new XAttribute("Stock", producto.stock), new XAttribute("Publish", producto.publish));
            
             xmlBrand.Add(xmlArticulo);
         }

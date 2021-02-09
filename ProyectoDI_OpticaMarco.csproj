@@ -50,8 +50,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942" />
+    <Reference Include="Google.Protobuf, Version=3.11.4.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604" />
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.1.11.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d" />
+    <Reference Include="MySql.Data, Version=8.0.22.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -61,9 +71,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="Ubiety.Dns.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="Zstandard.Net, Version=1.1.7.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -81,6 +93,18 @@
     </Compile>
     <Compile Include="Paginas\PaginaPrincipal.xaml.cs">
       <DependentUpon>PaginaPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectDB\MySQLData\RemoteProducts\MySQLHandler.cs" />
+    <Compile Include="ProjectDB\MySQLData\RemoteProducts\RemoteProductsDataSet\projectdbDataSet.cs">
+      <DependentUpon>projectdbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectDB\MySQLData\RemoteProducts\RemoteProductsDataSet\projectdbDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>projectdbDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProjectDB\SQLData\LocalImages\LocalImageDataSet\DataSet_Local_Images.cs">
+      <DependentUpon>DataSet_Local_Images.xsd</DependentUpon>
     </Compile>
     <Compile Include="ProjectDB\SQLData\LocalImages\LocalImageDataSet\DataSet_Local_Images.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -132,6 +156,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ProjectDB\MySQLData\RemoteProducts\RemoteProductsDataSet\projectdbDataSet.xsc">
+      <DependentUpon>projectdbDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProjectDB\MySQLData\RemoteProducts\RemoteProductsDataSet\projectdbDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>projectdbDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProjectDB\MySQLData\RemoteProducts\RemoteProductsDataSet\projectdbDataSet.xss">
+      <DependentUpon>projectdbDataSet.xsd</DependentUpon>
+    </None>
     <None Include="ProjectDB\SQLData\LocalImages\LocalImageDataSet\DataSet_Local_Images.xsc">
       <DependentUpon>DataSet_Local_Images.xsd</DependentUpon>
     </None>

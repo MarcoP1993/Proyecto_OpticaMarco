@@ -26,11 +26,22 @@ namespace ProyectoDI_OpticaMarco.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ProjectDB\\SQL" +
-            "Data\\LocalImages\\LocalImagesDB\\DB_Local_Images.mdf;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Perea\\source\\repos\\P" +
+            "royectoDI_OpticaMarco\\ProjectDB\\SQLData\\LocalImages\\LocalImagesDB\\DB_Local_Image" +
+            "s.mdf;Integrated Security=True")]
         public string DB_Local_ImagesConnectionString {
             get {
                 return ((string)(this["DB_Local_ImagesConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=1234;database=projectdb")]
+        public string projectdbConnectionString {
+            get {
+                return ((string)(this["projectdbConnectionString"]));
             }
         }
     }

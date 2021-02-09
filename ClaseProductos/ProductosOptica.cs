@@ -15,6 +15,7 @@ namespace ProyectoDI_OpticaMarco.ClaseProductos
         public DateTime fecha { set; get; }
         public int stock { set; get; }
 
+        public bool publish { set; get; }
         public BitmapImage imagen { set; get; }
 
         public ProductosOptica(string category, string brand, string referencia, string descripcion, string tipo, float precio, DateTime fecha, int stock)
@@ -32,6 +33,7 @@ namespace ProyectoDI_OpticaMarco.ClaseProductos
         public ProductosOptica()
         {
             this.fecha = DateTime.Today;
+            this.publish = false;
         }
 
         public String ObtenerTodosLosValores() {

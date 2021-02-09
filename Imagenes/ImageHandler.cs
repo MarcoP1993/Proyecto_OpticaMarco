@@ -40,6 +40,7 @@ namespace ProyectoDI_OpticaMarco.Imagenes
             LocalImageDBHandler.AddData_toDB(referencia, EncodeImage(bitmapImage));
         }
 
+
         public static BitmapImage CargarImagenPorDefecto() {
 
             BitmapImage bitmapImage = new BitmapImage();
