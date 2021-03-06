@@ -1,0 +1,55 @@
+﻿<Page x:Class="ProyectoDI_OpticaMarco.Paginas.Informes"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ProyectoDI_OpticaMarco.Paginas"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="750"
+      Title="Informes">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/ProyectoDI_OpticaMarco;component/Imagenes/financial-5050415_1280.jpg"/>
+        </Grid.Background>
+        <Button x:Name="crearFactura" Content="CREAR FACTURA" Height="60" Width="200" Margin="79,20,471.4,520" Click="crearFactura_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF5DF70B" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <Button x:Name="consultaFactura" Content="CONSULTA FACTURA" Height="60" Width="200" Margin="418,20,132.4,520" Click="consultaFactura_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF71C0B" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <StackPanel Margin="0,100,0.4,10">
+
+            <Button Height="30" Width="200" Content="Consulta por CIF/DNI Cliente" Click="BotonConsultaCIF_Click"/>
+            <StackPanel Orientation="Vertical" Height="100" Width="500">
+                <TextBox Height="30" Width="350" Margin="20"/>
+                <Button Height="40" Width="200" Margin="-15" Content="Aceptar" Click="botonAceptarCIF"/>
+            </StackPanel>
+
+            <Button  Height="30" Width="200" Content="Consulta por Fechas" Margin="20" Click="BotonConsultaFechas"/>
+            <StackPanel  Orientation="Vertical" Height="120" Width="500">
+                <DatePicker Height="30" Width="350"/>
+                <DatePicker Height="30" Width="350"/>
+                <Button Height="40" Width="200" Content="Aceptar" Click="BotonAceptarFechas"/>
+            </StackPanel>
+
+            <Button Height="30" Width="200" Content="Consulta por Factura" Click="BotonConsultaFactura"/>
+            <StackPanel Orientation="Vertical" Height="100" Width="500">
+                <TextBox Height="30" Width="350" Margin="10"/>
+                <Button Height="40" Width="200" Content="Aceptar" Click="BotonAceptarFacturas"/>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</Page>

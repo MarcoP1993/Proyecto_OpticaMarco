@@ -2,6 +2,7 @@
 using ProyectoDI_OpticaMarco.Imagenes;
 using ProyectoDI_OpticaMarco.ProjectDB.MySQLData.RemoteProducts.RemoteProductsDataSet;
 using ProyectoDI_OpticaMarco.ProjectDB.MySQLData.RemoteProducts.RemoteProductsDataSet.projectdbDataSetTableAdapters;
+using ProyectoDI_OpticaMarco.ProjectDB.SQLData.LocalImages.LocalImageDataSet.DataSet_Local_ImagesTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,18 +17,19 @@ namespace ProyectoDI_OpticaMarco.ProjectDB.MySQLData.RemoteProducts
         private static projectdbDataSet dataset = new projectdbDataSet();
 
         public static void AddData_toMySQL(ProductosOptica productos) {
+
             
-
-
-            imagesAdapter.Insert(productos.referencia, productos.category, productos.brand, productos.descripcion, productos.tipo, productos.precio, productos.stock, productos.fecha, productos.imagen);
+            imagesAdapter.Insert(productos.referencia, productos.category, productos.brand, productos.descripcion, productos.tipo, productos.precio, productos.stock, productos.fecha, ImageHandler.EncodeImage(productos.imagen));
             imagesAdapter.Update(dataset);
         }
 
         public static void Delete_toMySQL(ProductosOptica productos) {
 
+
             imagesAdapter.DeleteMySQL(productos.referencia);
             imagesAdapter.Update(dataset);
         }
+
 
       
     }

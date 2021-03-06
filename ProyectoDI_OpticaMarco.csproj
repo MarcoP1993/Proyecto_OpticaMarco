@@ -85,6 +85,12 @@
     <Compile Include="ClaseProductos\ProductHandler.cs" />
     <Compile Include="ClaseProductos\ProductosOptica.cs" />
     <Compile Include="Imagenes\ImageHandler.cs" />
+    <Compile Include="Paginas\CrearFactura.xaml.cs">
+      <DependentUpon>CrearFactura.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Informes.xaml.cs">
+      <DependentUpon>Informes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\MostrarProductos.xaml.cs">
       <DependentUpon>MostrarProductos.xaml</DependentUpon>
     </Compile>
@@ -125,6 +131,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Paginas\CrearFactura.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Paginas\Informes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Paginas\MostrarProductos.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -206,6 +220,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\no-disponible.png" />
+    <Resource Include="Imagenes\financial-5050415_1280.jpg" />
     <Content Include="ProjectDB\SQLData\LocalImages\LocalImagesDB\DB_Local_Images.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

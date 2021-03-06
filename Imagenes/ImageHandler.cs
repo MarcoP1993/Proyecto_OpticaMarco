@@ -16,16 +16,17 @@ namespace ProyectoDI_OpticaMarco.Imagenes
         public static BitmapImage GetBitmapImageFromFile()
         {
 
-            OpenFileDialog opf  = new OpenFileDialog();
-            opf.Filter = "Elige una imagen |*.jpg; *.png"; //fraseq¡ que quiero mostrar | y que la extension que obligo para la imagen
+            OpenFileDialog opf = new OpenFileDialog();
+            opf.Filter = "Elige una imagen |*.jpg; *.png"; //frase que quiero mostrar | y que la extension que obligo para la imagen
             BitmapImage bitmapImage = new BitmapImage();
 
             bool? dialogOK = opf.ShowDialog();
 
-            if (dialogOK == true) {
+            if (dialogOK == true)
+            {
                 String imageName = opf.FileName;
                 bitmapImage.BeginInit(); //esto inicia la imagen
-                bitmapImage.UriSource = new Uri(imageName, UriKind.Absolute); 
+                bitmapImage.UriSource = new Uri(imageName, UriKind.Absolute);
                 bitmapImage.EndInit();
                 return bitmapImage;
             }
@@ -34,14 +35,16 @@ namespace ProyectoDI_OpticaMarco.Imagenes
 
         }
 
-        public static void AddImage(string referencia, BitmapImage bitmapImage) { // este metodo se encarga de enlazar desde la interfaz y realizar operaciones desde la base de datos
+        public static void AddImage(string referencia, BitmapImage bitmapImage)
+        { // este metodo se encarga de enlazar desde la interfaz y realizar operaciones desde la base de datos
 
             //llamamos al manejador de imagenes
             LocalImageDBHandler.AddData_toDB(referencia, EncodeImage(bitmapImage));
         }
 
 
-        public static BitmapImage CargarImagenPorDefecto() {
+        public static BitmapImage CargarImagenPorDefecto()
+        {
 
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
@@ -50,12 +53,14 @@ namespace ProyectoDI_OpticaMarco.Imagenes
             return bitmapImage;
         }
 
-        public static BitmapImage LoadImage(string referencia) {
+        public static BitmapImage LoadImage(string referencia)
+        {
 
             byte[] imageData = LocalImageDBHandler.GetDataFromDB(referencia);
             BitmapImage bitmapImage = CargarImagenPorDefecto();
 
-            if (imageData != null) {
+            if (imageData != null)
+            {
 
                 bitmapImage = DecodeImage(imageData);
             }
@@ -104,3 +109,4 @@ namespace ProyectoDI_OpticaMarco.Imagenes
         }
     }
 }
+

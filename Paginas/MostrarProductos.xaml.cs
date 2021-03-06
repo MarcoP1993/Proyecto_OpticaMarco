@@ -62,7 +62,9 @@ namespace ProyectoDI_OpticaMarco.Paginas
             ProductosOptica productos = (ProductosOptica)myDataGrid.SelectedItem;
             XMLHandler.EliminarProducto(productos.referencia);
             LocalImageDBHandler.BorrarDataFromDB(productos.referencia);
+            MySQLHandler.Delete_toMySQL(productos);
             ActualizarProductList();
+
 
         }
 

@@ -24,12 +24,13 @@ namespace ProyectoDI_OpticaMarco
     {
         public static Frame myFrameNav;
         public ProductHandler productHandler = new ProductHandler();
+        internal static object navigation;
 
         public MainWindow()
         {
             InitializeComponent();
             myFrameNav = myFrameNavigation;
-            myFrameNavigation.NavigationService.Navigate(new PaginaPrincipal());
+            
         }
 
 
@@ -49,6 +50,11 @@ namespace ProyectoDI_OpticaMarco
 
             myFrameNav.NavigationService.Navigate(new PaginaPrincipal());
            
+        }
+
+        private void btnInformes_Click(object sender, RoutedEventArgs e)
+        {
+            myFrameNav.NavigationService.Navigate(new Informes());
         }
     }
 }

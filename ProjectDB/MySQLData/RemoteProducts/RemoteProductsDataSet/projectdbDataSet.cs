@@ -6,3 +6,12 @@
     {
     }
 }
+
+namespace ProyectoDI_OpticaMarco.ProjectDB.MySQLData.RemoteProducts.RemoteProductsDataSet.projectdbDataSetTableAdapters
+{
+
+
+    public partial class publishmpTableAdapter
+    {
+    }
+}
