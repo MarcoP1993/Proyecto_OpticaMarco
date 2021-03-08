@@ -6,8 +6,14 @@
       xmlns:local="clr-namespace:ProyectoDI_OpticaMarco.Paginas"
       mc:Ignorable="d" 
       d:DesignHeight="470" d:DesignWidth="670"
-      Background="DarkCyan"
       Title="CrearFactura">
+    <Page.Background>
+        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FFF9F4F4" Offset="0"/>
+            <GradientStop Color="#FF03F9F4" Offset="0.343"/>
+            <GradientStop Color="#FF0624A3" Offset="0.837"/>
+        </LinearGradientBrush>
+    </Page.Background>
 
     <Grid>
 
@@ -40,16 +46,16 @@
             </StackPanel>
 
         </StackPanel>
-        <DataGrid  Margin="31,242,162.4,10.4" x:Name="tablaproductos" ColumnWidth="*" CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
-                  ScrollViewer.HorizontalScrollBarVisibility="Auto">
+        <DataGrid  x:Name="tablaproductos" ColumnWidth="*" CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="520" Height="250" Margin="10,212,140.4,8.4">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="CANTIDAD" Binding="{Binding cantidad}"/>
-                <DataGridTextColumn Header="REFERENCIA" Binding="{Binding referncia}"/>
+                <DataGridTextColumn Header="REFERENCIA" Binding="{Binding referencia}"/>
                 <DataGridTextColumn Header="DESCRIPCION" Binding="{Binding descripcion}"/>
                 <DataGridTextColumn Header="PRECIO" Binding="{Binding precio}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Margin="528,313,25.4,84.4" Content="CREAR FACTURA" Click="btn_crearFactura">
+        <Button Content="CREAR" Click="btn_crearFactura" Width="100" Height="50" Margin="545,375,25.4,45.4">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FFF9F9F2" Offset="0.951"/>

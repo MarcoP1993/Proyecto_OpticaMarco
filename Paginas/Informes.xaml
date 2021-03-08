@@ -13,6 +13,9 @@
             <ImageBrush ImageSource="/ProyectoDI_OpticaMarco;component/Imagenes/financial-5050415_1280.jpg"/>
         </Grid.Background>
         <Button x:Name="crearFactura" Content="CREAR FACTURA" Height="60" Width="200" Margin="79,20,471.4,520" Click="crearFactura_Click">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF5DF70B" Offset="0"/>
@@ -21,7 +24,10 @@
             </Button.Background>
         </Button>
 
-        <Button x:Name="consultaFactura" Content="CONSULTA FACTURA" Height="60" Width="200" Margin="418,20,132.4,520" Click="consultaFactura_Click">
+        <Button x:Name="consultaFactura" Content="CONSULTA FACTURA" Height="60" Width="200" Margin="418,20,132.4,520" Click="consultaFactura_Click" BorderThickness="1">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFF71C0B" Offset="0"/>
@@ -29,23 +35,23 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <StackPanel Margin="0,100,0.4,10">
+        <StackPanel x:Name="panelBotonesConsulta" Margin="0,100,0.4,10" Visibility="Hidden">
 
-            <Button Height="30" Width="200" Content="Consulta por CIF/DNI Cliente" Click="BotonConsultaCIF_Click"/>
-            <StackPanel Orientation="Vertical" Height="100" Width="500">
+            <Button  Height="30" Width="200" Content="Consulta por CIF/DNI Cliente" Click="BotonConsultaCIF_Click" Background="#FFE5F709"/>
+            <StackPanel x:Name="panelConsultaCIF" Orientation="Vertical" Height="100" Width="500" Visibility="Hidden">
                 <TextBox Name="txt_consultadni" Height="30" Width="350" Margin="20"/>
                 <Button Height="40" Width="200" Margin="-15" Content="Aceptar" Click="botonAceptarCIF"/>
             </StackPanel>
 
-            <Button  Height="30" Width="200" Content="Consulta por Fechas" Margin="20" Click="BotonConsultaFechas"/>
-            <StackPanel  Orientation="Vertical" Height="120" Width="500">
-                <DatePicker Name="fecha1" Height="30" Width="350"/>
-                <DatePicker Name="fecha2" Height="30" Width="350"/>
+            <Button Height="30" Width="200" Content="Consulta por Fechas" Margin="20" Click="BotonConsultaFechas" Background="#FFDEF007"/>
+            <StackPanel  Name="panelConsultaFechas"  Orientation="Vertical" Height="120" Width="500" Visibility="Hidden">
+                <DatePicker x:Name="fecha1" Height="30" Width="350"/>
+                <DatePicker x:Name="fecha2" Height="30" Width="350"/>
                 <Button Height="40" Width="200" Content="Aceptar" Click="BotonAceptarFechas"/>
             </StackPanel>
 
-            <Button Height="30" Width="200" Content="Consulta por Factura" Click="BotonConsultaFactura"/>
-            <StackPanel Orientation="Vertical" Height="100" Width="500">
+            <Button  Height="30" Width="200" Content="Consulta por Factura" Click="BotonConsultaFactura" Background="#FFE2F404"/>
+            <StackPanel  Name="panelConsultaFactura" Orientation="Vertical" Height="100" Width="500" Visibility="Hidden">
                 <TextBox Name="txt_consultafactura" Height="30" Width="350" Margin="10"/>
                 <Button Height="40" Width="200" Content="Aceptar" Click="BotonAceptarFacturas"/>
             </StackPanel>

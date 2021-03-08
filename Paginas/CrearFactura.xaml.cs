@@ -76,6 +76,10 @@ namespace ProyectoDI_OpticaMarco.Paginas
 
                 FacturaDBHandler.AñadirCliente(cliente);
                 FacturaDBHandler.AñadirFactura(cliente, listaProductos, txt_factura.Text);
+                MainWindow.myFrameNav.NavigationService.Navigate(new PaginaPrincipal());
+                ReportPreview reportPreview = new ReportPreview();
+                reportPreview.MostrarInformeNumFactura(txt_factura.Text);
+                reportPreview.Show();
             }
         }
     }

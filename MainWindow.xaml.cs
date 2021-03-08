@@ -24,7 +24,7 @@ namespace ProyectoDI_OpticaMarco
     {
         public static Frame myFrameNav;
         public ProductHandler productHandler = new ProductHandler();
-        internal static object navigation;
+        
 
         public MainWindow()
         {

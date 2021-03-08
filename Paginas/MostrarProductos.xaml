@@ -24,7 +24,7 @@
         </StackPanel>
         <DataGrid x:Name="myDataGrid" Margin="20,70" Height="300" ColumnWidth="*" IsReadOnly="True"
                   CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True"
-                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto>
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
             <DataGrid.Columns>
 
                 <DataGridTemplateColumn Header="Imagen">

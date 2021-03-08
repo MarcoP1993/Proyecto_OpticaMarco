@@ -5,6 +5,7 @@ using ProyectoDI_OpticaMarco.ReportsData;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace ProyectoDI_OpticaMarco.ProjectDB.SQLData.Facturacion
         private static facturaTableAdapter facturaAdapter = new facturaTableAdapter();
         private static producto_facturaTableAdapter detalleAdapter = new producto_facturaTableAdapter();
         private static FacturasDataSet dataset = new FacturasDataSet();
+        private static InformeTableAdapter informeAdapter = new InformeTableAdapter();
 
         public static void AñadirCliente(Clientes clientes) {
 
@@ -32,5 +34,20 @@ namespace ProyectoDI_OpticaMarco.ProjectDB.SQLData.Facturacion
 
             }
         }
-    }
+
+        public static DataTable FacturaPorCif(string cif) {
+
+            return informeAdapter.GetDataCifCliente(cif);
+        }
+
+        public static DataTable FacturaPorFechas(string fecha1, string fecha2) {
+
+            return informeAdapter.GetDataFechas(fecha1, fecha2);
+        }
+
+        public static DataTable FacturaPorNumFactura(string numFactura) {
+
+            return informeAdapter.GetDataRefFactura(numFactura);
+        }
+    }   
 }
