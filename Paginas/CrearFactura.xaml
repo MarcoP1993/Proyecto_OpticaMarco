@@ -12,47 +12,44 @@
     <Grid>
 
         <TextBlock Text="Nº FACTURA" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="60,31,499.4,0"/>
-        <TextBox Width="400" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="215,33,55.4,0"/>
+        <TextBox x:Name="txt_factura" Width="400" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="215,33,55.4,0"/>
 
-        <StackPanel Orientation="Vertical" Width="200" Margin="10,75,460.4,263.4">
+        <StackPanel x:Name="datosCliente" Orientation="Vertical" Width="200" Margin="10,75,460.4,263.4">
             <TextBlock Text="DNI/CIF CLIENTE" HorizontalAlignment="Center"/>
-            <TextBox Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox Name="txt_dniCliente" Text="{Binding Path= cif}" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
             <TextBlock Text="NOMBRE CLIENTE" HorizontalAlignment="Center" Margin="5"/>
-            <TextBox Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox Name="txt_nombreCliente"  Text="{Binding Path= nombre}" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
             <TextBlock Text="DIRECCION CLIENTE" HorizontalAlignment="Center" Margin="5"/>
-            <TextBox Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <TextBox Name="txt_direccionCliente"  Text="{Binding Path= direccion}" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </StackPanel>
-        <TextBlock Text="ELIGE UN PRODUCTO" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="316,96,162.4,0"/>
-        <ComboBox Width="400" Height="40" Margin="215,122,55,308">
+        <StackPanel Orientation="Vertical" Margin="210,75,25.4,251.4">
+            <TextBlock Text="ELIGE UN PRODUCTO" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" />
+            <ComboBox x:Name="comboProductos" Width="400" Height="30" SelectionChanged="comboProductos_SelectionChanged"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="18,0,17.2,0" Width="400">
+                <TextBox x:Name="txt_cantidad" Width="70" Height="40" Text="{Binding Path= cantidad}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10"/>
+                <Button Width="200" Height="40" Content="ACEPTAR" Margin="40,0" Click="btn_aceptar">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF64FA07" Offset="0"/>
+                            <GradientStop Color="#FFFAF8F8" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </StackPanel>
 
-        </ComboBox>
-        <Button Width="200" Height="40" Margin="308,167,162.4,263.4" Content="ACEPTAR">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF64FA07" Offset="0"/>
-                    <GradientStop Color="#FFFAF8F8" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-
-        <DataGrid Margin="31,242,162.4,10.4" x:Name="myDataGrid" ColumnWidth="*" CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
+        </StackPanel>
+        <DataGrid  Margin="31,242,162.4,10.4" x:Name="tablaproductos" ColumnWidth="*" CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
                   ScrollViewer.HorizontalScrollBarVisibility="Auto">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="REFERENCIA"/>
-                <DataGridTextColumn Header="DESCRIPCION"/>
-                <DataGridTemplateColumn Header="CANTIDAD">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <TextBox Background="Aqua"/>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTextColumn Header="PRECIO"/>
+                <DataGridTextColumn Header="CANTIDAD" Binding="{Binding cantidad}"/>
+                <DataGridTextColumn Header="REFERENCIA" Binding="{Binding referncia}"/>
+                <DataGridTextColumn Header="DESCRIPCION" Binding="{Binding descripcion}"/>
+                <DataGridTextColumn Header="PRECIO" Binding="{Binding precio}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Margin="528,313,25.4,84.4" Content="CREAR FACTURA">
+        <Button Margin="528,313,25.4,84.4" Content="CREAR FACTURA" Click="btn_crearFactura">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FFF9F9F2" Offset="0.951"/>

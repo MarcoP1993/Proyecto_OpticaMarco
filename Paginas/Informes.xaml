@@ -33,20 +33,20 @@
 
             <Button Height="30" Width="200" Content="Consulta por CIF/DNI Cliente" Click="BotonConsultaCIF_Click"/>
             <StackPanel Orientation="Vertical" Height="100" Width="500">
-                <TextBox Height="30" Width="350" Margin="20"/>
+                <TextBox Name="txt_consultadni" Height="30" Width="350" Margin="20"/>
                 <Button Height="40" Width="200" Margin="-15" Content="Aceptar" Click="botonAceptarCIF"/>
             </StackPanel>
 
             <Button  Height="30" Width="200" Content="Consulta por Fechas" Margin="20" Click="BotonConsultaFechas"/>
             <StackPanel  Orientation="Vertical" Height="120" Width="500">
-                <DatePicker Height="30" Width="350"/>
-                <DatePicker Height="30" Width="350"/>
+                <DatePicker Name="fecha1" Height="30" Width="350"/>
+                <DatePicker Name="fecha2" Height="30" Width="350"/>
                 <Button Height="40" Width="200" Content="Aceptar" Click="BotonAceptarFechas"/>
             </StackPanel>
 
             <Button Height="30" Width="200" Content="Consulta por Factura" Click="BotonConsultaFactura"/>
             <StackPanel Orientation="Vertical" Height="100" Width="500">
-                <TextBox Height="30" Width="350" Margin="10"/>
+                <TextBox Name="txt_consultafactura" Height="30" Width="350" Margin="10"/>
                 <Button Height="40" Width="200" Content="Aceptar" Click="BotonAceptarFacturas"/>
             </StackPanel>
         </StackPanel>

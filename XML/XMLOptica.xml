@@ -1,26 +1,38 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Articulos>
   <Productos IdProducto="Gafas graduadas">
-    <Marca Nombre="Ray-Ban"></Marca>
-    <Marca Nombre="Porsche Design" />
+    <Marca Nombre="Ray-Ban">
+      <Articulo Referencia="02934" Descripcion="Gafas Ray-Ban" Tipo="Graduadas" Precio="150" FechaEntrada="2021-03-07T00:00:00+01:00" Stock="24" Publish="true" />
+    </Marca>
+    <Marca Nombre="Porsche Design">
+      <Articulo Referencia="20375" Descripcion="Gafas Porsche Graduadas" Tipo="De cerca" Precio="199" FechaEntrada="2020-11-25T00:00:00" Stock="5" Publish="true" />
+    </Marca>
     <Marca Nombre="Oakley" />
-    <Marca Nombre="Police" />
+    <Marca Nombre="Police">
+      <Articulo Referencia="394865" Descripcion="Gafas Graduadas Police" Tipo="Graduadas" Precio="129" FechaEntrada="2020-09-15T00:00:00" Stock="8" Publish="true" />
+    </Marca>
     <Marca Nombre="wer" />
   </Productos>
   <Productos IdProducto="Gafas de sol">
-    <Marca Nombre="Hawkers" />
+    <Marca Nombre="Hawkers">
+      <Articulo Referencia="93478" Descripcion="Gafas Hawker Sol" Tipo="De Sol" Precio="30" FechaEntrada="2020-12-09T00:00:00" Stock="8" Publish="true" />
+    </Marca>
     <Marca Nombre="Carrera"></Marca>
     <Marca Nombre="Diesel" />
   </Productos>
   <Productos IdProducto="Lentillas">
-    <Marca Nombre="Dailies"></Marca>
+    <Marca Nombre="Dailies">
+      <Articulo Referencia="95876" Descripcion="Lentillas Dailies Azul" Tipo="Lentillas" Precio="24" FechaEntrada="2021-03-07T00:00:00+01:00" Stock="47" Publish="true" />
+    </Marca>
     <Marca Nombre="BioInfinity" />
-    <Marca Nombre="Acuvue" />
+    <Marca Nombre="Acuvue">
+      <Articulo Referencia="06567" Descripcion="Acuvue Lentillas Verde" Tipo="Lentillas" Precio="29" FechaEntrada="2020-08-05T00:00:00" Stock="11" Publish="true" />
+    </Marca>
   </Productos>
   <Productos IdProducto="Audifonos">
     <Marca Nombre="Starkey" />
     <Marca Nombre="Resound">
-      <Articulo Referencia="123456" Descripcion="Audifonos Resound " Tipo="Audifonos" Precio="230" FechaEntrada="2021-02-25T00:00:00" Stock="8" Publish="true" />
+      <Articulo Referencia="34958" Descripcion="Audifonos para oír" Tipo="Audifonos" Precio="299" FechaEntrada="2021-01-05T00:00:00" Stock="56" Publish="true" />
     </Marca>
     <Marca Nombre="Phonak" />
   </Productos>
@@ -32,11 +44,17 @@
   <Productos IdProducto="Liquido Lentillas">
     <Marca Nombre="Solunate" />
     <Marca Nombre="Solocare" />
-    <Marca Nombre="Biotrue" />
+    <Marca Nombre="Biotrue">
+      <Articulo Referencia="39487" Descripcion="Liquido para Lentillas" Tipo="Lentillas" Precio="12" FechaEntrada="2020-11-02T00:00:00" Stock="20" Publish="true" />
+    </Marca>
   </Productos>
   <Productos IdProducto="Gafas Deporte">
-    <Marca Nombre="Adidas" />
+    <Marca Nombre="Adidas">
+      <Articulo Referencia="1234" Descripcion="Gafas Adidas rojas" Tipo="Deportiva" Precio="100" FechaEntrada="2021-03-01T00:00:00" Stock="20" Publish="true" />
+    </Marca>
     <Marca Nombre="Arnette" />
-    <Marca Nombre="Nike" />
+    <Marca Nombre="Nike">
+      <Articulo Referencia="298357" Descripcion="Gafas Deportiva Nike" Tipo="Deportiva" Precio="99" FechaEntrada="2021-02-11T00:00:00" Stock="10" Publish="true" />
+    </Marca>
   </Productos>
 </Articulos>

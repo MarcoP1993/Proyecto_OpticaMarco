@@ -44,5 +44,16 @@ namespace ProyectoDI_OpticaMarco.Properties {
                 return ((string)(this["projectdbConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\ProjectDB\\SQL" +
+            "Data\\Facturacion\\FacturasDB\\Facturas.mdf;Integrated Security=True")]
+        public string FacturasDataSet {
+            get {
+                return ((string)(this["FacturasDataSet"]));
+            }
+        }
     }
 }
