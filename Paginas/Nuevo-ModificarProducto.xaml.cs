@@ -1,5 +1,6 @@
 ﻿using ProyectoDI_OpticaMarco.ClaseProductos;
 using ProyectoDI_OpticaMarco.Imagenes;
+using ProyectoDI_OpticaMarco.ProjectDB.MySQLData.RemoteProducts;
 using ProyectoDI_OpticaMarco.XML;
 using System;
 using System.Collections.Generic;
@@ -25,13 +26,14 @@ namespace ProyectoDI_OpticaMarco.Paginas
     public partial class Nuevo_ModificarProducto : Page
 
     {
-        private XDocument xml = XDocument.Load("../../XML/XMLOptica.xml");
+        private XDocument xml = XMLHandler.ReturnXDocument();
 
         public ProductHandler productHandler;
         public ProductosOptica productos;
         public bool modify;
         public bool nuevaImagen = false;
-       
+        
+
         //Constructor modificar
         public Nuevo_ModificarProducto(String title, ProductHandler productHandler, ProductosOptica productos) {
 
@@ -74,16 +76,26 @@ namespace ProyectoDI_OpticaMarco.Paginas
 
         private void Button_Aceptar(object sender, RoutedEventArgs e)
         {
-            if (txt_referencia.Text.Length > 0) {
 
+            if (txt_referencia.Text.Length > 0 && ComboCategory.SelectedItem != null && ComboMarca.SelectedItem != null
+                && ComboTipo.SelectedItem != null && txtDescripcion.Text != "" && txtStock.Text != "" && txtPrecio.Text != ""
+                && txtFecha.SelectedDate != null) {
+
+                warningLabel.Visibility = Visibility.Hidden;
                 if (modify)
                 {
+                    
                     //productHandler.ModificarProducto(productos, pos);
                     XMLHandler.ModificarProducto(productos);
+                    productos.imagen = (BitmapImage)myImage.Source;
+                    MySQLHandler.updatetoMySQL(productos);
+                    
                     if (nuevaImagen) {
 
                         ImageHandler.ModificarImagen(productos.referencia,(BitmapImage) myImage.Source);
+
                     }
+                    MessageBox.Show("Producto Modificado", "modificar producto", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
                 else {
 
@@ -93,17 +105,18 @@ namespace ProyectoDI_OpticaMarco.Paginas
 
                         ImageHandler.AddImage(productos.referencia, (BitmapImage)myImage.Source);
                     }
-                    
-                    
+                    MessageBox.Show("Producto añadido", "Nuevo producto", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 }
 
-                MainWindow.myFrameNav.NavigationService.Navigate(new PaginaPrincipal());
+                GestionOptica.myFrameNav.NavigationService.Navigate(new PaginaPrincipal());
             }
+            warningLabel.Visibility = Visibility.Visible;
         }
 
         private void Button_Cancelar(object sender, RoutedEventArgs e)
         {
-            MainWindow.myFrameNav.NavigationService.Navigate(new PaginaPrincipal());
+            GestionOptica.myFrameNav.NavigationService.Navigate(new PaginaPrincipal());
         }
 
         private void ComboCategory_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -132,10 +145,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
             }
         }
 
-        private void txt_referencia_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
+        
 
         private void categoryCheck_Checked(object sender, RoutedEventArgs e)
         {
@@ -178,6 +188,11 @@ namespace ProyectoDI_OpticaMarco.Paginas
                 myImage.Source = bitmapImage;
                 nuevaImagen = true;
             }
+        }
+
+        private void txt_referencia_LostFocus(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }

@@ -30,7 +30,18 @@ namespace ProyectoDI_OpticaMarco.ProjectDB.MySQLData.RemoteProducts
             imagesAdapter.Update(dataset);
         }
 
+        public static bool updatetoMySQL(ProductosOptica productos)
+        {
+            bool borrar = false;
+            if (productos != null)
+            {
+                byte[] imagen = ImageHandler.EncodeImage(productos.imagen);
+                float precio = productos.precio;
+                decimal Precio = Convert.ToDecimal(precio);
+                imagesAdapter.UpdateMySQL(productos.referencia, productos.category, productos.brand, productos.descripcion, productos.tipo, Precio, productos.stock, productos.fecha, ImageHandler.EncodeImage(productos.imagen));
+            }
+            return borrar;
+        }
 
-      
     }
 }

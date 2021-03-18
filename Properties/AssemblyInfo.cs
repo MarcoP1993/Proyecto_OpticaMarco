@@ -7,11 +7,11 @@ using System.Windows;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("ProyectoDI_OpticaMarco")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("NovaLens")]
+[assembly: AssemblyDescription("Gestion de productos opticos")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ProyectoDI_OpticaMarco")]
+[assembly: AssemblyCompany("MarcoDev")]
+[assembly: AssemblyProduct("NovaLensVision")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

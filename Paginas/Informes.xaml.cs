@@ -34,7 +34,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
 
         private void crearFactura_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.myFrameNav.NavigationService.Navigate(new CrearFactura(productHandler));
+            GestionOptica.myFrameNav.NavigationService.Navigate(new CrearFactura(productHandler));
         }
 
         private void consultaFactura_Click(object sender, RoutedEventArgs e)

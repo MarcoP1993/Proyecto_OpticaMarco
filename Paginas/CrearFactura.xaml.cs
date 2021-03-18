@@ -43,7 +43,10 @@ namespace ProyectoDI_OpticaMarco.Paginas
         private void btn_aceptar(object sender, RoutedEventArgs e)
         {
             Boolean productoRepetido = false;
+            
             if (producto != null) {
+
+                
                 foreach (ProductosOptica p in listaProductos) {
 
                     if (p.referencia == producto.referencia) {
@@ -52,16 +55,21 @@ namespace ProyectoDI_OpticaMarco.Paginas
                         p.cantidad = p.cantidad + int.Parse(txt_cantidad.Text);
                     }
                 }
+                
                 if (!productoRepetido) {
-
+                   
                     listaProductos.Add(producto);
+                   
                 }
 
-               comboProductos.SelectedIndex = -1;
-               txt_cantidad.Text = "";
-               tablaproductos.Items.Refresh();
-            } 
-           
+                comboProductos.SelectedIndex = -1;
+                txt_cantidad.Text = "";
+                tablaproductos.Items.Refresh();
+                
+            }
+            warningLabel2.Visibility = Visibility.Visible;
+
+
         }
 
         private void comboProductos_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -72,15 +80,20 @@ namespace ProyectoDI_OpticaMarco.Paginas
 
         private void btn_crearFactura(object sender, RoutedEventArgs e)
         {
-            if (listaProductos.Count > 0 && txt_factura.Text !="" && cliente !=null) {
+            if (listaProductos.Count > 0 && txt_factura.Text != "" && cliente != null)
+            {
 
+                warningLabel.Visibility = Visibility.Hidden;
                 FacturaDBHandler.AñadirCliente(cliente);
                 FacturaDBHandler.AñadirFactura(cliente, listaProductos, txt_factura.Text);
-                MainWindow.myFrameNav.NavigationService.Navigate(new PaginaPrincipal());
+                GestionOptica.myFrameNav.NavigationService.Navigate(new PaginaPrincipal());
                 ReportPreview reportPreview = new ReportPreview();
                 reportPreview.MostrarInformeNumFactura(txt_factura.Text);
                 reportPreview.Show();
+                MessageBox.Show("Factura Creada", "Facturas", MessageBoxButton.OK, MessageBoxImage.Information);
+
             }
+            warningLabel.Visibility = Visibility.Visible;
         }
     }
 }

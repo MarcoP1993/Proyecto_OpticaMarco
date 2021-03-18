@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,8 +16,11 @@ namespace ProyectoDI_OpticaMarco.XML
         private static ProductosOptica producto;
         private static XElement xmlProductos;
         private static XElement xmlBrand;
+        private static string XMLpath = Environment.CurrentDirectory;
+        private static string XMLname = "XML/XMLOptica.xml";
+        private static string documentoXML = Path.Combine(XMLpath, XMLname);
         private static void CargarXML() { //Creo el moetodo para cargar el XML
-            xml = XDocument.Load("../../XML/XMLOptica.xml"); //Cargo el documento XMLOptica de la carpeta XML
+            xml = XDocument.Load(documentoXML); //Cargo el documento XMLOptica de la carpeta XML
         }
 
         public static ObservableCollection<ProductosOptica> CargarProductos()
@@ -45,7 +49,24 @@ namespace ProyectoDI_OpticaMarco.XML
         }
 
         private static void GuardarXML() {
-            xml.Save("../../XML/XMLOptica.xml");
+            xml.Save(documentoXML);
+        }
+
+        public static bool RefExistente(string refproducto) {
+            CargarXML();
+            bool existref = false;
+            foreach (var listaReferenciaXML in xml.Root.Elements("Productos").Elements("Marca").Elements("Articulo").Attributes("Referencia")) {
+                if (listaReferenciaXML.Value == refproducto)
+                {
+                    existref = true;
+                    break;
+                }
+                else {
+                    existref = false;
+                    break;
+                }
+            }
+            return existref;
         }
 
         public static void AñadirProductoXML(ProductosOptica p) {
@@ -148,6 +169,11 @@ namespace ProyectoDI_OpticaMarco.XML
 
                 xmlProductos.Add(xmlBrand);
             }
+        }
+
+        public static XDocument ReturnXDocument()
+        {
+            return XDocument.Load(documentoXML);
         }
     }
 }

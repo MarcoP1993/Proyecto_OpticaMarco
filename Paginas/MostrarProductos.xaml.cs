@@ -28,8 +28,8 @@ namespace ProyectoDI_OpticaMarco.Paginas
     {
         ProductHandler productHandler;
         ObservableCollection<ProductosOptica> filtrarProductos;
-        private XDocument xml = XDocument.Load("../../XML/XMLOptica.xml");
-         
+        private XDocument xml = XMLHandler.ReturnXDocument();
+
         public MostrarProductos(ProductHandler productHandler)
         {
             InitializeComponent();
@@ -53,18 +53,33 @@ namespace ProyectoDI_OpticaMarco.Paginas
         {
            
             ProductosOptica productos = (ProductosOptica)myDataGrid.SelectedItem;
-            MainWindow.myFrameNav.NavigationService.Navigate(new Nuevo_ModificarProducto("MODIFICAR PRODUCTOS", productHandler, (ProductosOptica)productos.Clone()));
+            GestionOptica.myFrameNav.NavigationService.Navigate(new Nuevo_ModificarProducto("MODIFICAR PRODUCTOS", productHandler, (ProductosOptica)productos.Clone()));
 
         }
 
         private void Boton_Borrar(object sender, RoutedEventArgs e)
         {
-            ProductosOptica productos = (ProductosOptica)myDataGrid.SelectedItem;
-            XMLHandler.EliminarProducto(productos.referencia);
-            LocalImageDBHandler.BorrarDataFromDB(productos.referencia);
-            MySQLHandler.Delete_toMySQL(productos);
-            ActualizarProductList();
+            
+            
+            MessageBoxResult mensaje = MessageBox.Show("¿Deseas borrar el producto?", "Borrar Producto",
+                            MessageBoxButton.YesNo, MessageBoxImage.Question);
 
+            switch (mensaje) {
+                case MessageBoxResult.Yes:
+                    ProductosOptica productos = (ProductosOptica)myDataGrid.SelectedItem;
+                    XMLHandler.EliminarProducto(productos.referencia);
+                    LocalImageDBHandler.BorrarDataFromDB(productos.referencia);
+                    MySQLHandler.Delete_toMySQL(productos);
+                    ActualizarProductList();
+                    MessageBox.Show("Producto Borrado"); 
+                    break;
+
+                case MessageBoxResult.No:
+                    break;
+                
+
+            }
+            
 
         }
 
@@ -134,13 +149,14 @@ namespace ProyectoDI_OpticaMarco.Paginas
                 productos.publish = true;
                 XMLHandler.ModificarProducto(productos);
                 ActualizarProductList();
-
+                MessageBox.Show("Producto publicado correctamente");
             }
             else {
                 MySQLHandler.Delete_toMySQL(productos);
                 productos.publish = false;
                 XMLHandler.ModificarProducto(productos);
                 ActualizarProductList();
+                MessageBox.Show("Producto despublicado");
             }
            
         }

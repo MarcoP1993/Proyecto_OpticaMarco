@@ -18,7 +18,7 @@
     <Grid>
 
         <TextBlock Text="Nº FACTURA" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Margin="60,31,499.4,0"/>
-        <TextBox x:Name="txt_factura" Width="400" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="215,33,55.4,0"/>
+        <TextBox x:Name="txt_factura" Width="400" Height="25" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="215,33,55.4,0" ToolTip="Escribe un numero de factura"/>
 
         <StackPanel x:Name="datosCliente" Orientation="Vertical" Width="200" Margin="10,75,460.4,263.4">
             <TextBlock Text="DNI/CIF CLIENTE" HorizontalAlignment="Center"/>
@@ -30,12 +30,13 @@
             <TextBlock Text="DIRECCION CLIENTE" HorizontalAlignment="Center" Margin="5"/>
             <TextBox Name="txt_direccionCliente"  Text="{Binding Path= direccion}" Width="150" Height="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </StackPanel>
+
         <StackPanel Orientation="Vertical" Margin="210,75,25.4,251.4">
             <TextBlock Text="ELIGE UN PRODUCTO" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" />
             <ComboBox x:Name="comboProductos" Width="400" Height="30" SelectionChanged="comboProductos_SelectionChanged"/>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="18,0,17.2,0" Width="400">
-                <TextBox x:Name="txt_cantidad" Width="70" Height="40" Text="{Binding Path= cantidad}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10"/>
-                <Button Width="200" Height="40" Content="ACEPTAR" Margin="40,0" Click="btn_aceptar">
+                <TextBox x:Name="txt_cantidad" Width="70" Height="40" Text="{Binding Path= cantidad}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,10" ToolTip="Escribe una cantidad"/>
+                <Button Width="200" Height="40" Content="ACEPTAR" Margin="40,0" Click="btn_aceptar" ToolTip="Añadir Producto a la tabla">
                     <Button.Background>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                             <GradientStop Color="#FF64FA07" Offset="0"/>
@@ -44,10 +45,11 @@
                     </Button.Background>
                 </Button>
             </StackPanel>
+            <Label x:Name="warningLabel2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Red" Content="Elige un producto para añadirlo" Visibility="Hidden" FontWeight="Bold" FontSize="15" FontStretch="Expanded" />
 
         </StackPanel>
         <DataGrid  x:Name="tablaproductos" ColumnWidth="*" CanUserAddRows="False" AutoGenerateColumns="False" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto"
-                  ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="520" Height="250" Margin="10,212,140.4,8.4">
+                  ScrollViewer.HorizontalScrollBarVisibility="Auto" Width="520" Margin="10,260,140.4,8.4" ToolTip="Productos a facturar">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="CANTIDAD" Binding="{Binding cantidad}"/>
                 <DataGridTextColumn Header="REFERENCIA" Binding="{Binding referencia}"/>
@@ -55,7 +57,7 @@
                 <DataGridTextColumn Header="PRECIO" Binding="{Binding precio}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="CREAR" Click="btn_crearFactura" Width="100" Height="50" Margin="545,375,25.4,45.4">
+        <Button Content="CREAR" Click="btn_crearFactura" Width="100" Height="50" Margin="545,375,25.4,45.4" ToolTip="Crear Factura">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FFF9F9F2" Offset="0.951"/>
@@ -63,6 +65,9 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+
+        <Label x:Name="warningLabel" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Red" Content="Rellene todos los campos" Visibility="Hidden" FontWeight="Bold" FontSize="15" FontStretch="Expanded" Margin="0,160,440.4,280.4"/>
+
     </Grid>
 
 

@@ -27,6 +27,11 @@ namespace ProyectoDI_OpticaMarco.ReportsData
             InitializeComponent();
         }
 
+        private static string Currentpath = Environment.CurrentDirectory;
+        private static string reportRef = "Informes/FacturaNumero.rdlc";
+        private static string reportCif = "Informes/FacturaCif.rdlc";
+        private static string reportFechas = "Informes/FacturaFechas.rdlc";
+
         public bool MostrarInformeCliente(string cif_cliente) {
 
             bool okConsulta = false; //creamos el bool en false
@@ -35,7 +40,7 @@ namespace ProyectoDI_OpticaMarco.ReportsData
             DataTable clientesCif = FacturaDBHandler.FacturaPorCif(cif_cliente);
             rds.Value = clientesCif;
 
-            myReportView.LocalReport.ReportPath = "../../Informes/FacturaCif.rdlc";
+            myReportView.LocalReport.ReportPath = System.IO.Path.Combine(Currentpath, reportCif);
             myReportView.LocalReport.DataSources.Add(rds);
             myReportView.RefreshReport();
 
@@ -54,7 +59,7 @@ namespace ProyectoDI_OpticaMarco.ReportsData
             DataTable clientesCif = FacturaDBHandler.FacturaPorFechas(fecha1,  fecha2);
             rds.Value = clientesCif;
 
-            myReportView.LocalReport.ReportPath = "../../Informes/FacturaFechas.rdlc";
+            myReportView.LocalReport.ReportPath = System.IO.Path.Combine(Currentpath, reportFechas);
             myReportView.LocalReport.DataSources.Add(rds);
             myReportView.RefreshReport();
 
@@ -74,7 +79,7 @@ namespace ProyectoDI_OpticaMarco.ReportsData
             DataTable clientesCif = FacturaDBHandler.FacturaPorNumFactura(numFactura);
             rds.Value = clientesCif;
 
-            myReportView.LocalReport.ReportPath = "../../Informes/FacturaNumero.rdlc";
+            myReportView.LocalReport.ReportPath = System.IO.Path.Combine(Currentpath, reportRef);
             myReportView.LocalReport.DataSources.Add(rds);
             myReportView.RefreshReport();
 

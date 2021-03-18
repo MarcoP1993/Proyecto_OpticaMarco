@@ -5,7 +5,8 @@
       <Articulo Referencia="02934" Descripcion="Gafas Ray-Ban" Tipo="Graduadas" Precio="150" FechaEntrada="2021-03-07T00:00:00+01:00" Stock="24" Publish="true" />
     </Marca>
     <Marca Nombre="Porsche Design">
-      <Articulo Referencia="20375" Descripcion="Gafas Porsche Graduadas" Tipo="De cerca" Precio="199" FechaEntrada="2020-11-25T00:00:00" Stock="5" Publish="true" />
+      <Articulo Referencia="20375" Descripcion="Gafas Porsche Graduadas" Tipo="Progresivas" Precio="199" FechaEntrada="2020-11-25T00:00:00" Stock="10" Publish="true" />
+      <Articulo Referencia="39847623" Descripcion="Gafas Porche Design" Tipo="Monofocales" Precio="149" FechaEntrada="2021-03-16T00:00:00+01:00" Stock="7" Publish="true" />
     </Marca>
     <Marca Nombre="Oakley" />
     <Marca Nombre="Police">
@@ -15,7 +16,7 @@
   </Productos>
   <Productos IdProducto="Gafas de sol">
     <Marca Nombre="Hawkers">
-      <Articulo Referencia="93478" Descripcion="Gafas Hawker Sol" Tipo="De Sol" Precio="30" FechaEntrada="2020-12-09T00:00:00" Stock="8" Publish="true" />
+      <Articulo Referencia="93478" Descripcion="Gafas Hawkers Sol" Tipo="Plastico" Precio="30" FechaEntrada="2020-12-09T00:00:00" Stock="12" Publish="true" />
     </Marca>
     <Marca Nombre="Carrera"></Marca>
     <Marca Nombre="Diesel" />
@@ -23,10 +24,11 @@
   <Productos IdProducto="Lentillas">
     <Marca Nombre="Dailies">
       <Articulo Referencia="95876" Descripcion="Lentillas Dailies Azul" Tipo="Lentillas" Precio="24" FechaEntrada="2021-03-07T00:00:00+01:00" Stock="47" Publish="true" />
+      <Articulo Referencia="34573689" Descripcion="Lentillas Dailies" Tipo="Lentillas blandas" Precio="22" FechaEntrada="2021-03-10T00:00:00" Stock="5" Publish="true" />
     </Marca>
     <Marca Nombre="BioInfinity" />
     <Marca Nombre="Acuvue">
-      <Articulo Referencia="06567" Descripcion="Acuvue Lentillas Verde" Tipo="Lentillas" Precio="29" FechaEntrada="2020-08-05T00:00:00" Stock="11" Publish="true" />
+      <Articulo Referencia="06567" Descripcion="Acuvue Lentillas Verde" Tipo="Lentillas" Precio="25" FechaEntrada="2020-08-05T00:00:00" Stock="15" Publish="true" />
     </Marca>
   </Productos>
   <Productos IdProducto="Audifonos">
@@ -38,7 +40,9 @@
   </Productos>
   <Productos IdProducto="Monturas Gafas">
     <Marca Nombre="Dolce Gabanna" />
-    <Marca Nombre="Gucci" />
+    <Marca Nombre="Gucci">
+      <Articulo Referencia="098743" Descripcion="Montura Gucci" Tipo="Plastico" Precio="189" FechaEntrada="2021-03-11T00:00:00" Stock="4" Publish="true" />
+    </Marca>
     <Marca Nombre="Fila" />
   </Productos>
   <Productos IdProducto="Liquido Lentillas">
@@ -50,9 +54,11 @@
   </Productos>
   <Productos IdProducto="Gafas Deporte">
     <Marca Nombre="Adidas">
-      <Articulo Referencia="1234" Descripcion="Gafas Adidas rojas" Tipo="Deportiva" Precio="100" FechaEntrada="2021-03-01T00:00:00" Stock="20" Publish="true" />
+      <Articulo Referencia="1234" Descripcion="Gafas Adidas rojas" Tipo="Deportiva" Precio="99" FechaEntrada="2021-03-01T00:00:00" Stock="20" Publish="true" />
     </Marca>
-    <Marca Nombre="Arnette" />
+    <Marca Nombre="Arnette">
+      <Articulo Referencia="856252" Descripcion="Arnette Sol Azul" Tipo="Plastico" Precio="89" FechaEntrada="2021-03-17T00:00:00+01:00" Stock="6" Publish="false" />
+    </Marca>
     <Marca Nombre="Nike">
       <Articulo Referencia="298357" Descripcion="Gafas Deportiva Nike" Tipo="Deportiva" Precio="99" FechaEntrada="2021-02-11T00:00:00" Stock="10" Publish="true" />
     </Marca>

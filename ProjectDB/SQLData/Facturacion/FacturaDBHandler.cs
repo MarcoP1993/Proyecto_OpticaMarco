@@ -20,19 +20,39 @@ namespace ProyectoDI_OpticaMarco.ProjectDB.SQLData.Facturacion
         private static FacturasDataSet dataset = new FacturasDataSet();
         private static InformeTableAdapter informeAdapter = new InformeTableAdapter();
 
-        public static void AñadirCliente(Clientes clientes) {
-
-            clienteAdapter.Insert(clientes.cif, clientes.nombre, clientes.direccion);
+        public static bool AñadirCliente(Clientes clientes) {
+            try
+            {
+                clienteAdapter.Insert(clientes.cif, clientes.nombre, clientes.direccion);
+                return true;
+            }
+            catch
+            {
+               
+                return false;
+            }
+            
         }
 
-        public static void AñadirFactura(Clientes clientes, ObservableCollection<ProductosOptica> listaProductos, string refFactura) {
+        public static bool AñadirFactura(Clientes clientes, ObservableCollection<ProductosOptica> listaProductos, string refFactura) {
+            try
+            {
+                
+                facturaAdapter.Insert(refFactura, clientes.cif, DateTime.Today.Date);
+                foreach (ProductosOptica p in listaProductos)
+                {
 
-            facturaAdapter.Insert(refFactura, clientes.cif, DateTime.Today.Date);
-            foreach (ProductosOptica p in listaProductos) {
+                    detalleAdapter.Insert(p.referencia, refFactura, p.cantidad, p.precio, p.descripcion);
 
-                detalleAdapter.Insert(p.referencia, refFactura, p.cantidad, p.precio, p.descripcion);
-
+                }
+                return true;
             }
+            catch
+            {
+
+                return false;
+            }
+            
         }
 
         public static DataTable FacturaPorCif(string cif) {
