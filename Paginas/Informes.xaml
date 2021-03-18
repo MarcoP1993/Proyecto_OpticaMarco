@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.Background>
-            <ImageBrush ImageSource="/ProyectoDI_OpticaMarco;component/Imagenes/financial-5050415_1280.jpg"/>
+            <ImageBrush ImageSource="financial-5050415_1280.jpg"/>
         </Grid.Background>
         <Button x:Name="crearFactura" Content="CREAR FACTURA" Height="60" Width="200" Margin="79,20,471.4,520" Click="crearFactura_Click">
             <Button.Effect>

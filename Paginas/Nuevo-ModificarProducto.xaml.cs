@@ -32,6 +32,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
         public ProductosOptica productos;
         public bool modify;
         public bool nuevaImagen = false;
+
         
 
         //Constructor modificar
@@ -47,6 +48,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
             ComboMarca.Text = productos.brand;
             myImage.Source = ImageHandler.LoadImage(productos.referencia);
             modify = true;
+            txt_referencia.IsEnabled = false;
         }
 
         private void initCategoryCombo()
@@ -70,6 +72,7 @@ namespace ProyectoDI_OpticaMarco.Paginas
             initCategoryCombo();
             myImage.Source = ImageHandler.CargarImagenPorDefecto();
             modify = false;
+            txt_referencia.IsEnabled = true;
 
 
         }
@@ -190,9 +193,6 @@ namespace ProyectoDI_OpticaMarco.Paginas
             }
         }
 
-        private void txt_referencia_LostFocus(object sender, RoutedEventArgs e)
-        {
-            
-        }
+       
     }
 }

@@ -4,6 +4,7 @@ using ProyectoDI_OpticaMarco.ReportsData;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -91,6 +92,8 @@ namespace ProyectoDI_OpticaMarco.Paginas
                 reportPreview.MostrarInformeNumFactura(txt_factura.Text);
                 reportPreview.Show();
                 MessageBox.Show("Factura Creada", "Facturas", MessageBoxButton.OK, MessageBoxImage.Information);
+                DataTable n_factura = FacturaDBHandler.FacturaPorNumFactura(txt_factura.Text);
+               
 
             }
             warningLabel.Visibility = Visibility.Visible;

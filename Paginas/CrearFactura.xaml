@@ -57,7 +57,7 @@
                 <DataGridTextColumn Header="PRECIO" Binding="{Binding precio}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="CREAR" Click="btn_crearFactura" Width="100" Height="50" Margin="545,375,25.4,45.4" ToolTip="Crear Factura">
+        <Button Content="CREAR" Click="btn_crearFactura" Width="100" Height="50" Margin="545,375,25.4,45.4" ToolTip="Crear Factura" RenderTransformOrigin="0.5,0.504">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FFF9F9F2" Offset="0.951"/>

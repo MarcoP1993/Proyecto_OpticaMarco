@@ -39,7 +39,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Referencia:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="Gold" Background="Black"/>
-            <TextBox x:Name="txt_referencia" Text ="{Binding Path=referencia}" Margin="10,5.4,9.6,5.2" Grid.Row="1" VerticalContentAlignment="Center" BorderBrush="#FF0B45F4" LostFocus="txt_referencia_LostFocus"/>
+            <TextBox x:Name="txt_referencia" Text ="{Binding Path=referencia}" Margin="10,5.4,9.6,5.2" Grid.Row="1" VerticalContentAlignment="Center" BorderBrush="#FF0B45F4" IsEnabled="False"/>
 
             <TextBlock Grid.Row="2" Text="Elije un producto:" HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="14" Foreground="Gold" Background="Black"/>
             <ComboBox x:Name="ComboCategory" Text ="{Binding Path=category}" Margin="10,5" Grid.Row="3" VerticalContentAlignment="Center" SelectionChanged="ComboCategory_SelectionChanged" BorderBrush="#FF0668F6"/>
